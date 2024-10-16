@@ -5,7 +5,7 @@ public class IBAN {
 	public static void main(String[] args) {
                 GenerarIban();
 	}
-	public void GenerarIban(){
+	public static void GenerarIban(){
 		Random random = new Random();
 		String CC = "00";
 		int KK = random.nextInt(100);
@@ -217,15 +217,13 @@ public class IBAN {
                 BigInteger uno = BigInteger.valueOf(1);
                 asd = asd.mod(divisor);
                 CC = restador.subtract(asd).toString();
-                System.out.println(ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN);
                 temporal = NNNN + KK +  BBBB[num] + GGGG + codPais[num] + CC;
-                System.out.println(temporal);
                 asd = new BigInteger(temporal);
                 asd = asd.mod(divisor);
-                System.out.println(asd);
-                if (asd != uno) {
+                if (!asd.equals(uno)) {
                 	GenerarIban();
                 }
+                System.out.println(ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN);
 
 	}
 	 }
