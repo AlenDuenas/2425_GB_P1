@@ -1,0 +1,161 @@
+Tecnologies Avançades S.L.
+Solucions Innovadores S.L.
+Serveis Informàtics S.A.
+Consultoria Estratègica S.L.
+Desenvolupament Web S.L.
+Energía Renovable S.A.
+Arquitectura Sostenible S.L.
+Solucions Mediambientals S.L.
+Automatització Industrial S.A.
+Disseny Gràfic Creatiu S.L.
+Marketing Digital S.L.
+Gestió de Projectes S.A.
+Serveis Jurídics S.L.
+Formació Empresarial S.L.
+Gestió de Recursos Humans S.A.
+Serveis Logístics S.L.
+Desenvolupament Mòbil S.L.
+Consultoria Financera S.L.
+Auditoria i Control S.A.
+Serveis de Traducció S.L.
+Producció Audiovisual S.L.
+Agència Publicitària S.L.
+Serveis de Comunicació S.L.
+Tecnologia de la Informació S.L.
+Serveis de Seguretat S.L.
+Transport i Distribució S.A.
+Serveis de Neteges S.L.
+Gestió de Residus S.L.
+Serveis de Manteniment S.L.
+Consultoria Ambiental S.L.
+Disseny d'Interior S.A.
+Serveis d'Assessorament S.L.
+Serveis de Publicitat S.L.
+Desenvolupament de Programari S.L.
+Serveis d'Enginyeria S.L.
+Agència de Viatges S.L.
+Formació Professional S.L.
+Serveis de Salut S.L.
+Consultoria en Tecnologia S.A.
+Serveis de Disseny Web S.L.
+Serveis de Fotografia S.L.
+Producció d'Esdeveniments S.L.
+Serveis de Fitness S.L.
+Consultoria en Recursos Humans S.L.
+Desenvolupament de Jocs S.L.
+Serveis de Comunicació Visual S.L.
+Serveis de Gestió Financera S.L.
+Consultoria en Màrqueting S.L.
+Serveis d'Exportació S.L.
+Serveis de Catering S.L.
+Estudis de Mercat S.L.
+Serveis d'Anàlisi Dades S.L.
+Serveis de Traducció Tècnica S.L.
+Serveis d'Ensenyament S.L.
+Serveis de Coaching S.L.
+Gestió d'Innovació S.L.
+Serveis de Mediació S.L.
+Disseny de Productes S.L.
+Serveis d'Assessorament Jurídic S.L.
+Agència de Comunicació S.L.
+Serveis de Màrqueting S.L.
+Producció Musical S.L.
+Serveis d'Adopcions S.L.
+Serveis d'Arquitectura S.L.
+Serveis de Publicitat Digital S.L.
+Serveis de Gestió d'Imatge S.L.
+Serveis de Formació Online S.L.
+Serveis d'Internet S.L.
+Serveis d'Assistència Tècnica S.L.
+Serveis de Disseny d'Experiència S.L.
+Serveis de Desenvolupament d'Aplicacions S.L.
+Serveis de Gestió de Continguts S.L.
+Serveis d'Internet de les Coses S.L.
+Serveis de Dades S.L.
+Serveis d'Enginyeria Ambiental S.L.
+Serveis de Disseny Industrial S.L.
+Serveis d'Enginyeria de Software S.L.
+Serveis d'Enginyeria de Sistemes S.L.
+Serveis d'Investigació de Mercats S.L.
+Serveis de Vigilància S.L.
+Serveis de Gestió de Projectes S.L.
+Serveis de Seguretat Alimentària S.L.
+Serveis de Telecomunicacions S.L.
+Serveis de Manteniment d'Instal·lacions S.L.
+Serveis de Neteges Industrials S.L.
+Serveis de Transport de Mercaderies S.L.
+Serveis de Logística i Almacenament S.L.
+Serveis de Formació i Desenvolupament S.L.
+Serveis de Consultoria Financera S.L.
+Serveis d'Investigació S.L.
+Serveis de Desenvolupament de Productes S.L.
+Serveis de Màrqueting Digital S.L.
+Serveis de Gestió de la Qualitat S.L.
+Serveis de Formació Empresarial S.L.
+Serveis de Desenvolupament d'Aplicacions Mòbils S.L.
+Serveis de Formació Professional S.L.
+Serveis de Desenvolupament de Continguts S.L.
+Serveis d'Anàlisi de Dades S.L.
+Serveis de Gestió de Riscos S.L.
+Serveis de Formació de Recursos Humans S.L.
+Serveis de Disseny d'Experiències S.L.
+Serveis d'Assessoria Empresarial S.L.
+Serveis de Gestió de la Innovació S.L.
+Serveis de Formació en Comunicació S.L.
+Serveis de Consultoria Estratègica S.L.
+Serveis de Disseny Gràfic S.L.
+Serveis de Gestió de la Reputació S.L.
+Serveis de Consultoria Tècnica S.L.
+Serveis de Disseny de Marca S.L.
+Serveis d'Anàlisi de Mercats S.L.
+Serveis de Màrqueting de Continguts S.L.
+Serveis de Gestió de la Comunicació S.L.
+Serveis de Formació en Lideratge S.L.
+Serveis de Disseny d'Interfície S.L.
+Serveis de Consultoria en Innovació S.L.
+Serveis de Gestió de Talent S.L.
+Serveis d'Assessoria Legal S.L.
+Serveis d'Enginyeria de Dades S.L.
+Serveis de Comunicació Corporativa S.L.
+Serveis de Gestió de Projectes Internacionals S.L.
+Serveis de Formació en Vendes S.L.
+Serveis de Disseny d'Identitat S.L.
+Serveis d'Investigació i Desenvolupament S.L.
+Serveis de Disseny de Continguts S.L.
+Serveis de Formació en Disseny S.L.
+Serveis d'Assessoria en Estratègia S.L.
+Serveis d'Investigació de Productes S.L.
+Serveis de Disseny d'Experiències d'Usuari S.L.
+Serveis de Formació en Gestió S.L.
+Serveis de Disseny d'Aplicacions S.L.
+Serveis d'Assessorament sobre Dades S.L.
+Serveis de Formació en Comunicació Corporativa S.L.
+Serveis de Gestió de la Innovació i Tecnologia S.L.
+Serveis de Consultoria en Estratègia Empresarial S.L.
+Serveis de Disseny de Prototips S.L.
+Serveis de Formació en Negocis S.L.
+Serveis de Gestió de Projectes Estratègics S.L.
+Serveis d'Anàlisi de Dades Empresarials S.L.
+Serveis de Gestió de Marca S.L.
+Serveis de Desenvolupament de Plataformes S.L.
+Serveis de Consultoria en Transformació Digital S.L.
+Serveis de Disseny de Sistemes S.L.
+Serveis d'Assessoria Financera Personalitzada S.L.
+Serveis de Gestió de Relacions S.L.
+Serveis de Desenvolupament de Solucions S.L.
+Serveis de Formació en Negocis Internacionals S.L.
+Serveis d'Innovació Tecnològica S.L.
+Serveis de Consultoria en Logística S.L.
+Serveis de Disseny de Solucions S.L.
+Serveis de Formació en Estratègia S.L.
+Serveis d'Assistència Legal S.L.
+Serveis de Disseny de Projectes S.L.
+Serveis de Consultoria en Dades S.L.
+Serveis de Gestió de Projectes Creatius S.L.
+Serveis de Formació en Creativitat S.L.
+Serveis de Disseny de Campanyes S.L.
+Serveis d'Investigació de Tendències S.L.
+Serveis de Gestió de Projectes de Màrqueting S.L.
+Serveis de Formació en Gestió de Projectes S.L.
+Serveis d'Assessorament en Innovació S.L.
+Serveis de Disseny d'Experiències Immersives S.L.
