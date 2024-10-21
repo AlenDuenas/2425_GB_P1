@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Autonumeric {
-
+ 
 	public static void main(String[] args) {
 	}
 	public void autonumeric(int numLineas) {

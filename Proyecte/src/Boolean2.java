@@ -13,4 +13,4 @@ public class Boolean2 {
 	System.out.println(a);
  
 }
-} 
+}

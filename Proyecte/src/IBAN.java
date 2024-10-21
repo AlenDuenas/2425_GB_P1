@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.math.BigInteger;
 public class IBAN {
-	
+
 	public static void main(String[] args) {
                 GenerarIban();
 	}
