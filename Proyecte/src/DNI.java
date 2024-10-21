@@ -1,5 +1,5 @@
 import java.util.Random;
-
+ 
 public class DNI {
     private String dni;
     public DNI() {

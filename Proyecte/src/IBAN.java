@@ -21,13 +21,7 @@ public class IBAN {
 
             // Array de nombres de bancos
         	//No es necesario para codigo
-            String[] nombresBancos = {
-                "BBVA", "Banco Santander", "CaixaBank", "Banco Sabadell", "Bankia", "ING España", "Cajamar", "Unicaja Banco", "Kutxabank", "Banco Popular",
-                "Bankinter", "Openbank", "Banco Castilla-La Mancha", "EVO Banco", "Liberbank", "Abanca", "Deutsche Bank", "Triodos Bank", "ING España", "Triodos Bank NV",
-                "Banco de Crédito Local", "Banco Caixa Geral", "Banco de Galicia", "ING Bank NV", "Banesto", "Caja Rural de Almería", "Banco Caminos", "Deutsche Bank", "TargoBank", "Ibercaja Banco",
-                "Banco Etcheverría", "Banco Banif", "Bankia", "Banco Santander", "Cecabank", "Caja Rural de Almendralejo", "Caja Rural Central", "CaixaBank", "Caja de Ingenieros", "Kutxabank",
-                "Caja Rural de Jaén", "Banco Comercial Español", "Caja Rural Central", "Banco de España", "BNP Paribas", "Banca Pueyo", "Banca March", "BBVA", "Banesto", "Banco Pastor"
-            };
+
             //Array de las siglas de paises
             String[] ES = {
                     "AL", "AD", "AT", "AZ", "BH", "BE", "BA", "BR", "BG", "CR", 
