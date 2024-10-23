@@ -9,7 +9,7 @@ public class Funcio_Numero {
 		//Zona de variables
 		int minim;
 		int maxim;
-		 
+		int decimals; 
 		double resultatDouble;
 		
 		System.out.println("Entri siusplau quin numero enter minim vol generar a partir ");
@@ -18,36 +18,30 @@ public class Funcio_Numero {
 		System.out.println("Entri siusplau quin numero enter maxim vol generar");
 		maxim=teclat.nextInt();
 		
-		resultatDouble=numInt(minim, maxim);
+
+		System.out.print("Ingresa la cantidad de decimales: ");
+		decimals=teclat.nextInt();
+		
+		resultatDouble=numInt(minim, maxim, decimals);
+		 
 		System.out.println(resultatDouble);
 
 	}
 	
-	public static Double numInt (int minim, int maxim) {
+	public static Double numInt (int minim, int maxim, int decimals) {
 		Random bombo=new Random(maxim);
-		double num=0;
-		boolean condicio=true;
-		num=bombo.nextInt();
-		num=num+minim;
 		
 		
-		
-		while (condicio)
-		{
-			if (num<minim || num>maxim)
-			{
-				num=bombo.nextInt();
-				num=num+minim;
+		// Generar un número aleatori amb decimals dins del rang
+        double numAleatorio =0;
+        numAleatorio = minim + (maxim - minim) * bombo.nextDouble();
 
-			}
-			else 
-			{
-				condicio=false;
-			}
-		}
+        // Redondeja el número a la cantitat de decimals especificada
+        double factor = Math.pow(10, decimals);  // Factor per moure els decimals 
+        double numero = Math.round(numAleatorio * factor) / factor;
 		
-
-		return num;	
+		
+		return numero;	
 	}
 	
 	

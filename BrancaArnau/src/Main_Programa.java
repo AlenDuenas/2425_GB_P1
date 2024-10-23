@@ -109,10 +109,10 @@ public class Main_Programa {
 				condicioMenu = true; //Tornem a reincialitzar la variable per a que ens entri en el bucle 
 				while (condicioMenu) 
 				{
-					System.out.println("Per ultim la cantitat de registres que vol generar Minim 200 i Maxim 1000 Linies");	//Inserti les linies que vol generar 
+					System.out.println("Per ultim la cantitat de registres que vol generar Minim 1 i Maxim 1000 Linies");	//Inserti les linies que vol generar 
 					cantitatRegistres = teclat.nextInt();
 
-					if (cantitatRegistres < 200 || cantitatRegistres > 1000) {		//Control d'errors 
+					if (cantitatRegistres < 1 || cantitatRegistres > 1000) {		//Control d'errors 
 						System.out.println(
 								"Cantitat de registres invaalid, siusplau torni a entrar una cantitat entre 200 i 1000 Registres");
 						condicioMenu = true;
