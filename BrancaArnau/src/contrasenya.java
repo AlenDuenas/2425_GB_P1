@@ -6,26 +6,32 @@ public class contrasenya {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclat=new Scanner (System.in);
+		
+		//Zona de variables 
 		int opcioContrasenya[];
 		String contrasenyaLletres;
 		String contrasenyaNumeros;
 		String contrasenyaMajuscules;
 		String contrasenyaSimbols;
 		
+		
+		//Imprimim el menu de benvinguda 
 		menu();
+		
+		//Guardem totes les opcions rebudes enn un arrray desde el main 
 		opcioContrasenya = opcions (teclat);
 		
-		
+		//Guardem en una variable la longitut que ens han entrat per teclat
 		int opcioLongitut = opcioContrasenya[4];
 		
 		
-		 
+		//Si la opcio GenerarLletres es 2. No, aixi amb totes les condicions (Generar Numeros, Simbols, majuscules, minuscules...) 
 		if (opcioContrasenya[0] == 2) 
 		{
-			 contrasenyaLletres = "";
+			 contrasenyaLletres = "";	//Reinicialitzem
 		}
 		
-			else 
+			else //Sino generem una contrasenya nomes Lletres / Numeros / Simbols / Majuscules
 			{
 				contrasenyaLletres = lletres(opcioLongitut);
 			}
@@ -35,12 +41,12 @@ public class contrasenya {
 		if (opcioContrasenya[1] == 2)
 		{
 			
-			contrasenyaNumeros = "";
+			contrasenyaNumeros = "";	
 		}
 		
 			else 
 			{
-				contrasenyaNumeros = numeros(opcioLongitut);
+				contrasenyaNumeros = numeros(opcioLongitut); 
 				
 			}	
 			
@@ -74,19 +80,19 @@ public class contrasenya {
 				
 			}
 		
-		 
-		  String contrasenya = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
-	        System.out.println("Contraseña generada: " + contrasenya);
+		 //Aqui Passem a la funcio tot tipus de contrasenya generada encara que hagi triat l'opcio o no i la longitut
+		  String contrasenyaFinal = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
+	      System.out.println("Contraseña generada: " + contrasenyaFinal);
 	     
 		
 
 	}
-	
+	//Menu
 	public static void menu () {
 		System.out.println("Entri siusplau els següents parametres per poder generar-li la contrasenya ------->");
 	}
 	 
-
+	//Aqui demanem si vol minuscules, numeros, majuscules, simbols etc...
 	public static int[] opcions(Scanner teclat) {
 		boolean condicio= true;
 		int opcions [] = new int [5];
@@ -193,15 +199,20 @@ public class contrasenya {
 		return opcions;
 	}
 	
+	//Generador de contrasenya nomes Lletres
 	public static String lletres (int longitut) {
 		
+		//Creem un String amb totes les lletres del abecedari 
 		 String caracters = "abcdefghijklmnopqrstuvwxyz";
-	     Random random = new Random();
-	     String contrasenya = "";
+	     Random random = new Random(); //Instanciem un Random 
+	     String contrasenya = "";	//Aqui guardarem la contrasenya generada
 
-	        for (int i = 0; i < longitut; i++) {
-	            int indexAleatori = random.nextInt(caracters.length());
-	            contrasenya += caracters.charAt(indexAleatori);
+	     
+	     //Fem un bucle de la longitut de que ens ha passat l'usuari 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	            int indexAleatori = random.nextInt(caracters.length());	//Crrem el random a partir de la longitut de l'String de caracters per seleccionar la posicio aleatoria
+	            contrasenya += caracters.charAt(indexAleatori);	// Acumulem cada lletra a el nou String 
 	        }
 
 	        return contrasenya;
@@ -211,25 +222,33 @@ public class contrasenya {
 	}
 	
 	public static String numeros (int longitut) {
-		 String numeros = "123456789";
-	     Random random = new Random();
-	     String contrasenyaNumeros = "";
-
-	        for (int i = 0; i < longitut; i++) {
+		 String numeros = "123456789";	//Creem un String amb tots els numeros del 1 - 9
+	     Random random = new Random();	//Instanciem el aleatori
+	     String contrasenyaNumeros = "";	//Guardarem la contrasenya generada per numeros aqui a aquest String 
+	     
+	   //Fem un bucle de la longitut de que ens ha passat l'usuari 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Guardem el numero aleatori a partir de la longitut passada
 	            int indexAleatori = random.nextInt(numeros.length());
-	            contrasenyaNumeros += numeros.charAt(indexAleatori);
+	            //Guardem a contrasenyaNumeros els numeros generats aleatoriament
+	            contrasenyaNumeros += numeros.charAt(indexAleatori);	
 	        }
 
 	        return contrasenyaNumeros;
 	}
 	
 	public static String majuscules (int longitut) {
-		 String majuscules = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	     Random random = new Random();
-	     String contrasenyaMajuscules = "";
+		 String majuscules = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";		//Creem un String amb totes les lletres del abecedari amb majuscules
+	     Random random = new Random();	//Instanciem un Random
+	     String contrasenyaMajuscules = "";	//Guardarem la contrasenya generada aqui
 
-	        for (int i = 0; i < longitut; i++) {
-	            int indexAleatori = random.nextInt(majuscules.length());
+	     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Generem el numero aleatori a partir de la longitut de l'String majuscules
+	            int indexAleatori = random.nextInt(majuscules.length());	
+	            //Generem a contrasenya 
 	            contrasenyaMajuscules += majuscules.charAt(indexAleatori);
 	        }
 
@@ -237,43 +256,49 @@ public class contrasenya {
 	}
 	
 	public static String simbols (int longitut) {
-		 String simbols = "!ºª&()#*+-¿?=¬~¨[ ]";
-	     Random random = new Random();
-	     String contrasenyaSimbols = "";
+		 String simbols = "!ºª&()#*+-¿?=¬~¨[ ]";	//Creem un String amb varis signes que Java accepti 
+	     Random random = new Random();	//Instanciem un Random
+	     String contrasenyaSimbols = "";	//Creem un nou String per guardar la contrasenya generada
 
-	        for (int i = 0; i < longitut; i++) {
+	     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Generem el numero aleatori a partir de la longitut de l'String simbols
 	            int indexAleatori = random.nextInt(simbols.length());
-	            contrasenyaSimbols += simbols.charAt(indexAleatori);
+	            contrasenyaSimbols += simbols.charAt(indexAleatori);	//ho guardem  a el nou String 
 	        }
 
 	        return contrasenyaSimbols;
 	}
 	
-	public static String generarContrasenya(String contrasenyaLletres, String contrasenyaNumeros, String contrasenyaMajuscules, String contrasenyaSimbols, int longitud) {
-	        // Concatenamos todos los posibles caracteres en un solo String
-	        String posiblesCaracteres = contrasenyaLletres + contrasenyaNumeros + contrasenyaMajuscules + contrasenyaSimbols;
+    public static String generarContrasenya(String contrasenyaLletres, String contrasenyaNumeros, String contrasenyaMajuscules, String contrasenyaSimbols, int longitud) {
+        // Concatem tots els possibles caràcters en un sol String
+        String possiblesCaracteres = contrasenyaLletres + contrasenyaNumeros + contrasenyaMajuscules + contrasenyaSimbols;
 
-	        // Verificamos que no esté vacío el conjunto de caracteres posibles
-	        if (posiblesCaracteres.isEmpty()) {
-	            throw new IllegalArgumentException("No se han proporcionado caracteres para generar la contraseña.");
-	        }
+        // Verifiquem que no estigui buit el conjunt de caràcters possibles
+        if (possiblesCaracteres.isEmpty()) 
+        {
+            throw new IllegalArgumentException("No s'han proporcionat caràcters per generar la contrasenya.");
+        }
+        
+        // Creem un String per emmagatzemar la contrasenya generada
+        String contrasenyaGenerada = "";
 
-	        // Creamos un String para almacenar la contraseña generada
-	        String contrasenyaGenerada = "";
+        // Creem el generador aleatori
+        Random random = new Random();
 
-	        // Creamos el generador aleatorio
-	        Random random = new Random();
+        // Generem la contrasenya seleccionant els caràcters aleatoris 
+        for (int i = 0; i < longitud; i++) 
+        {
+            // Triem un caràcter aleatori del String 'possiblesCaracteres'
+            int indexAleatori = random.nextInt(possiblesCaracteres.length());
+            char caracterAleatori = possiblesCaracteres.charAt(indexAleatori);
+            contrasenyaGenerada += caracterAleatori;  // Afegim el caràcter a la contrasenya
+        }
 
-	        // Generamos la contraseña seleccionando caracteres aleatorios del conjunto de posibles caracteres
-	        for (int i = 0; i < longitud; i++) {
-	            // Elegimos un carácter aleatorio del String 'posiblesCaracteres'
-	            int indexAleatorio = random.nextInt(posiblesCaracteres.length());
-	            char caracterAleatorio = posiblesCaracteres.charAt(indexAleatorio);
-	            contrasenyaGenerada += caracterAleatorio;  // Añadimos el carácter a la contraseña
-	        }
+        return contrasenyaGenerada;
+    }
 
-	        return contrasenyaGenerada;
-	    }
 	
 	
 
