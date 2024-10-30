@@ -1,16 +1,29 @@
 import java.util.Random;
 import java.math.BigInteger;
 public class IBAN {
-
+	
 	public static void main(String[] args) {
                 GenerarIban();
 	}
+	/**
+	 * Genera un IBAN aleatori per a un país seleccionat aleatòriament.
+	 * 
+	 * Aquesta funció crea un IBAN que consisteix en:
+	 * - Un codi de control (CC) inicialitzat a "00".
+	 * - Un número aleatori (KK) per a la validació.
+	 * - Un codi de banc (BBBB) seleccionat aleatòriament d'un array.
+	 * - Un codi de sucursal (GGGG) generat aleatòriament.
+	 * - Un número de compte (NNNN) generat aleatòriament.
+	 * 
+	 * A més, la funció calcula el codi de control correcte per a l'IBAN 
+	 * 
+	 */
 	public static void GenerarIban(){
 		Random random = new Random();
 		String CC = "00";
 		int KK = random.nextInt(100);
-		//Todos los arrays comparten posiciones 0182 es bbva, AL son 28 caracteres y 4 de sucursal.
-		//Codigos de todos los bancos
+		// Tots els arrays comparteixen posicions 0182 és bbva, AL són 28 caràcters i 4 de sucursal.
+		// Còdigs de tots els bancs
         String[] BBBB = {
                 "0182", "0049", "2100", "0081", "2038", "1465", "3058", "2103", "2095", "0075",
                 "0128", "0073", "2105", "0239", "2048", "2080", "0019", "1450", "1465", "1491",
@@ -19,10 +32,10 @@ public class IBAN {
                 "3111", "0031", "2077", "0183", "0208", "0099", "0244", "0182", "0030", "0267"
             };
 
-            // Array de nombres de bancos
-        	//No es necesario para codigo
+            // Array de noms de bancs
+        	// No és necessari per al codi
 
-            //Array de las siglas de paises
+            // Array de les sigles de països
             String[] ES = {
                     "AL", "AD", "AT", "AZ", "BH", "BE", "BA", "BR", "BG", "CR", 
                     "HR", "CY", "CZ", "DK", "DO", "EE", "FO", "FI", "FR", "GE",
@@ -33,7 +46,7 @@ public class IBAN {
                     "TN", "TR", "UA", "AE", "GB", "VG"
                 };
 
-                // Array con el número de caracteres del IBAN para cada país
+                // Array amb el nombre de caràcters de l'IBAN per a cada país
                 int[] numCaracteres = {
                     28, 24, 20, 28, 22, 16, 20, 29, 22, 21, 
                     21, 28, 24, 18, 28, 20, 18, 18, 27, 22, 
@@ -43,74 +56,74 @@ public class IBAN {
                     24, 27, 22, 20, 24, 22, 24, 21, 30, 24, 
                     26, 29, 28, 23, 22
                 };
-                //Array con la longitud del codigo de sucursal de cada pais
+                // Array amb la longitud del codi de sucursal de cada país
                 int[] longitudesCodigosSucursal = {
-                        4,  // Albania
+                        4,  // Albània
                         4,  // Andorra
-                        5,  // Austria
-                        4,  // Azerbaiyán
-                        4,  // Baréin
-                        3,  // Bélgica
-                        4,  // Bosnia y Herzegovina
+                        5,  // Àustria
+                        4,  // Azerbaidjan
+                        4,  // Bahrain
+                        3,  // Bèlgica
+                        4,  // Bòsnia i Hercegovina
                         4,  // Brasil
-                        4,  // Bulgaria
+                        4,  // Bulgària
                         4,  // Costa Rica
-                        7,  // Croacia
-                        5,  // Chipre
-                        4,  // República Checa
+                        7,  // Croàcia
+                        5,  // Xipre
+                        4,  // República Txeca
                         4,  // Dinamarca
                         4,  // República Dominicana
-                        2,  // Estonia
-                        4,  // Islas Feroe
-                        4,  // Finlandia
-                        5,  // Francia
-                        6,  // Georgia
-                        8,  // Alemania
+                        2,  // Estònia
+                        4,  // Illes Fèroe
+                        4,  // Finlàndia
+                        5,  // França
+                        6,  // Geòrgia
+                        8,  // Alemanya
                         4,  // Gibraltar
-                        7,  // Grecia
-                        4,  // Groenlandia
+                        7,  // Grècia
+                        4,  // Groenlàndia
                         4,  // Guatemala
-                        4,  // Hungría
-                        4,  // Islandia
+                        4,  // Hongria
+                        4,  // Islàndia
                         4,  // Irlanda
                         4,  // Israel
-                        5,  // Italia
-                        6,  // Jordania
-                        6,  // Kazajistán
+                        5,  // Itàlia
+                        6,  // Jordània
+                        6,  // Kazakhstan
                         4,  // Kosovo
                         2,  // Kuwait
-                        2,  // Letonia
+                        2,  // Letònia
                         6,  // Líbano
                         7,  // Liechtenstein
-                        4,  // Lituania
-                        3,  // Luxemburgo
+                        4,  // Lituània
+                        3,  // Luxemburg
                         4,  // Malta
-                        5,  // Mauritania
-                        5,  // Mauricio
-                        2,  // Moldavia
-                        5,  // Mónaco
+                        5,  // Mauritània
+                        5,  // Maurici
+                        2,  // Moldàvia
+                        5,  // Mònaco
                         4,  // Montenegro
-                        6,  // Países Bajos
+                        6,  // Països Baixos
                         6,  // Noruega
-                        4,  // Pakistán
-                        6,  // Polonia
+                        4,  // Pakistan
+                        6,  // Polònia
                         4,  // Portugal
-                        4,  // Rumanía
+                        4,  // Romania
                         5,  // San Marino
-                        4,  // Arabia Saudita
-                        6,  // Serbia
-                        6,  // Eslovaquia
-                        4,  // Eslovenia
-                        4,  // España
-                        4,  // Suecia
-                        5,  // Suiza
+                        4,  // Aràbia Saudita
+                        6,  // Sèrbia
+                        6,  // Eslovàquia
+                        4,  // Eslovènia
+                        4,  // Espanya
+                        4,  // Suècia
+                        5,  // Suïssa
                         4,  // Timor Oriental
-                        4,  // Túnez
-                        4,  // Turquía
-                        29, // Ucrania
-                        3,  // Emiratos Árabes Unidos
-                        6,  // Reino Unido
-                        4   // Islas Vírgenes Británicas
+                        4,  // Tunísia
+                        4,  // Turquia
+                        29, // Ucraïna
+                        3,  // Emirats Àrabs Units
+                        6,  // Regne Unit
+                        4   // Illes Verges Britàniques
                     };
 
                 String[] codPais = {
@@ -181,15 +194,11 @@ public class IBAN {
                 	    "2018", // GB
                 	    "2014"  // VG
                 	};
-                /*Creo NNNN, num y GGG 
-                num = numero aleatorio para ver que posiciones de arrays pillo
-                NNNN = numero de cuenta se generara mas adelante
-                GGGG = Codigo de sucursal se genera justo debajo
-                */
+
                 String NNNN = "";
                 int num = random.nextInt(50);
                 String GGGG = "";
-                //Para generar el codigo de sucursal
+                // Per generar el codi de sucursal
                 for (int i = 0; i <= longitudesCodigosSucursal[num]; i++) {
                 	GGGG = GGGG + random.nextInt(10) + "";
                 }
@@ -198,27 +207,26 @@ public class IBAN {
                 for (int i = 0; i < numCaracteres[num]; i++) {
                 	NNNN = NNNN + random.nextInt(10) + "";
                 }
-                //Imprimir IBAN (se puede hacer sin la variable IBAN pero puede ser util tenerlo asi)
+                // Imprimir IBAN (es pot fer sense la variable IBAN però pot ser útil tenir-ho així)
 
                 String temporal = NNNN + KK +  BBBB[num] + GGGG + codPais[num] + CC;
-                /*Paso el String temporal a un BigInteger para tener la concatenacion entera como un numero
-                  Como no puedo usar el % y el .mod(97) tampoco creo otro big int para la division de 97
-                  Necesito crear un bigint por cada operacion que quiera hacer
+                /* Paso el String temporal a un BigInteger per tenir la concatenació completa com un número
+                  Com no puc usar el % i el .mod(97) tampoc crec un altre big int per la divisió de 97
+                  Necessito crear un bigint per cada operació que vull fer
                 */
-                BigInteger asd = new BigInteger(temporal);
+                BigInteger temporalNum = new BigInteger(temporal);
                 BigInteger divisor = BigInteger.valueOf(97);
                 BigInteger restador = BigInteger.valueOf(98);
                 BigInteger uno = BigInteger.valueOf(1);
-                asd = asd.mod(divisor);
-                CC = restador.subtract(asd).toString();
+                temporalNum = temporalNum.mod(divisor);
+                CC = restador.subtract(temporalNum).toString();
                 temporal = NNNN + KK +  BBBB[num] + GGGG + codPais[num] + CC;
-                asd = new BigInteger(temporal);
-                asd = asd.mod(divisor);
-                if (!asd.equals(uno)) {
+                temporalNum = new BigInteger(temporal);
+                temporalNum = temporalNum.mod(divisor);
+                if (!temporalNum.equals(uno)) {
                 	GenerarIban();
                 }
                 System.out.println(ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN);
 
 	}
-	 }
-
+}
