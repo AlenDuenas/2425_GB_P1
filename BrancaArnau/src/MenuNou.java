@@ -9,23 +9,35 @@ public class MenuNou {
 		// TODO Auto-generated method stub
 		Scanner teclat = new Scanner(System.in);
 		
-		String primeraLinia= primeraLinia();	//Aqui guardo la primera linea del arxiu per mes endavant configurar l'arxiu
+		opcions(teclat);
 		
 		
 		
-		
-		
-		String opcions [] =opcions(teclat);
-		
-		for (int i=0;i<opcions.length&&opcions[i]!=null;i++)
-		{
-			System.out.println(opcions[i]);
+	
+		/*try {		
+
+			//Tipus de file fileReader per llegir-lo 
+			FileReader fr = new FileReader("C:\\Users\\arnau\\Desktop\\Mo.txt"); //Posem ruta d'arxiu per llegir
+			BufferedReader br = new BufferedReader(fr); 	//Serveix per llegir 
+			
+			
+		while(br.ready()) 
+		{ 		
+			
+			
 		}
 		
+		br.close();			
+		fr.close();
 		
-
 		
 		
+		
+		
+		} catch (Exception pasanCosas) {
+			pasanCosas.printStackTrace();
+		}
+		*/
 	}
 
 	
@@ -51,44 +63,43 @@ public class MenuNou {
 		return linea;
 	}
 	
-	public static String []  opcions (Scanner teclat) {
+	public static void  opcions (Scanner teclat) {
 		int cont=0;
 		String guardo [] = new String [20] ;
-		int i=0;
+		//int i=0;
+		String primeraLinea="";
+		
 		try {
 		
 		File arxiu = new File("C:\\Users\\arnau\\Desktop\\Mo.txt");
 		
 		  BufferedReader lector = new BufferedReader(new FileReader(arxiu));
 	      String linea="";
-	      
+	      primeraLinea=lector.readLine();
 	    
-	      while ((linea = lector.readLine()) != null) 
+	      while ((linea=lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
 	      {
-	    	  if (cont >= 1) 
-	    	  {
-	           	
-	            guardo[i]=linea;
-	            i++;
-	            
-	    	  }
 	    	 
-	    	  cont++;
+       		//System.out.println(linea);
+	    	  
+	    	  String [] camps=linea.split("#");
+	    	   	  
+	    	  
+	    	  System.out.println(camps[0]); 
+	    
 	      }
 
         lector.close();
-	    return guardo;
+	   
 			
 		}catch (Exception pasanCosas) {
 			pasanCosas.printStackTrace();
 		}
-		return null;
-	}
-	
-	
-	public static void separacio () {
 		
 	}
+	
+	
+	
 	
 	
 	
