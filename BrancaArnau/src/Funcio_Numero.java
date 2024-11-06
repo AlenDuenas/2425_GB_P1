@@ -7,26 +7,49 @@ public class Funcio_Numero {
 		// TODO Auto-generated method stub
 		Scanner teclat=new Scanner(System.in);
 		//Zona de variables
-		int minim;
-		int maxim;
-		int decimals; 
+		 
 		double resultatDouble;
+		int opcions[];
 		
-		System.out.println("Entri siusplau quin numero enter minim vol generar a partir ");
-		minim=teclat.nextInt();
+		opcions=opcions(teclat);
 		
-		System.out.println("Entri siusplau quin numero enter maxim vol generar");
-		maxim=teclat.nextInt();
 		
-
-		System.out.print("Ingresa la cantidad de decimales: ");
-		decimals=teclat.nextInt();
-		
-		resultatDouble=numInt(minim, maxim, decimals);
+		resultatDouble=numInt(opcions[0], opcions[1], opcions[2]);
 		 
 		System.out.println(resultatDouble);
 
 	}
+	
+	
+	public static int [] opcions (Scanner teclat) {
+		int minim;
+		int maxim;
+		int decimals;
+		int opcio[]=new int[3];
+		
+		System.out.println("Entri siusplau quin numero enter minim vol generar a partir si posa un 0 el valor serà 0 ");
+		minim=teclat.nextInt();
+		
+		if (minim==0)
+		minim=0;
+		
+		System.out.println("Entri siusplau quin numero enter maxim vol generar si posa 0 el valor serà 1000");
+		maxim=teclat.nextInt();
+		
+		if (maxim==0)
+			maxim=1000;
+
+		System.out.print("Entri la catitat de decimals que vol que tingui el numero ");
+		decimals=teclat.nextInt();
+		
+		opcio[0]=minim;
+		opcio[1]=maxim;
+		opcio[2]=decimals;
+		
+		return opcio;
+	}
+	
+	
 	
 	public static Double numInt (int minim, int maxim, int decimals) {
 		Random bombo=new Random(maxim);

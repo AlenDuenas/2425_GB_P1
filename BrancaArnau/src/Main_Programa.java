@@ -20,7 +20,7 @@ public class Main_Programa {
 			FileWriter escritor = new FileWriter(entrada[3]+".txt");	//Creem el .txt per poder tenir d'on llegir les dades
 		 
 		
-			escritor.write(entrada[0]+", "+ entrada[1]+", "+ entrada[2]+" \n"); //escriptura 
+			escritor.write(entrada[0]+", "+ entrada[1]+", "+ entrada[2]+" \n");//escriptura 
 	        escritor.close();//Tancament 
 	        
 	        
@@ -43,6 +43,25 @@ public class Main_Programa {
 		System.out.println("Siusplau entri les següents indicacions per teclat -->");
 
 	}
+	
+	public static void menu2 () {
+		System.out.println("*******************************");
+		System.out.println("Ara entri els camps que vol obtenir de arxius");
+		System.out.println("1: Nom");
+		System.out.println("2: Cognoms");
+		System.out.println("3: Ciutats");
+		System.out.println("4: Adreçes");
+		System.out.println("5: Professions");
+		System.out.println("6: Pais");
+		System.out.println("7: Estudis");
+		System.out.println("8: Colors");
+		System.out.println("9: URL");
+		System.out.println("10: Noms de companyia");
+		
+
+	}
+	
+	
 	
 	public static String [] opcionsEntrada (Scanner teclat) {
 		// Zona de variables
@@ -157,5 +176,45 @@ public class Main_Programa {
 		}
 		return null;
 	}
+	
+	/*public static int [] opcionsArxiuFitxers (Scanner teclat) {
+		boolean condicio=true;
+		int moltesOpcions []= new int [11];
+		System.out.println("Ara entri quines dades vol generar -->");
+		System.out.println("1: Nom");
+		System.out.println("2: Cognom");
+		System.out.println("3: Ciutats");
+		System.out.println("4: Adreçes");
+		System.out.println("5: Professions");
+		System.out.println("6: Pais");
+		System.out.println("7: Estudis");
+		System.out.println("8: Colors");
+		System.out.println("9: URL");
+		System.out.println("10: Nom de Companyies");
+		System.out.println("-1: Seleccionar dades generades -->");
+		
+		int opcions = teclat.nextInt();
+		int i=0;
+		while (condicio)
+		{
+			if (opcions > 0 && opcions < 11)
+			{
+				moltesOpcions[i]=opcions;
+			}
+			
+			if (opcions == moltesOpcions[i])
+			{
+				System.out.println("Opcio Reptida");
+			}
+			
+			else if (opcions == -1)
+			{
+				condicio=false;
+			}
+		}
+		
+		return moltesOpcions;
+	}*/
+	
 
 }
