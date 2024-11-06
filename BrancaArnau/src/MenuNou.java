@@ -76,27 +76,72 @@ public class MenuNou {
 		  BufferedReader lector = new BufferedReader(new FileReader(arxiu));
 	      String linea="";
 	      primeraLinea=lector.readLine();
-	    
-	      while ((linea=lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
-	      {
-	    	 
-       		//System.out.println(linea);
-	    	  
-	    	  String [] camps=linea.split("#");
-	    	   	  
-	    	  
-	    	  System.out.println(camps[0]); 
-	    
-	      }
+	      
+	    boolean compleix = comprovacioPrimeraLinia(primeraLinea);
+	      
+	      //Condicio de que si la primera linia no es correcte no entro a llegir les altres linies
+	    if (compleix)
+	    {
+	    	 while ((linea=lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
+		      {
+		    	 
+	       		//System.out.println(linea);
+		    	  
+		    	  String [] camps=linea.split("#");
+		    	   	  
+		    	  
+		    	  System.out.println(camps[0]); 
+		    
+		      }
 
-        lector.close();
-	   
+	        lector.close();
+		   
+				
 			
+	    }
+	    
+	    else 
+	    {
+	    	System.out.println("No compleix");
+	    }
+	     
 		}catch (Exception pasanCosas) {
 			pasanCosas.printStackTrace();
 		}
-		
 	}
+	
+	
+	public static boolean comprovacioPrimeraLinia (String primeraLinia) {
+		String [] separo = primeraLinia.split("#");
+		boolean compleix = true;
+		int registres=Integer.parseInt(separo[2]);
+		
+		for (int i = 0; i < separo.length; i++)
+		{
+			
+			if (!separo[0].equals("XML") && !separo[0].equals("SQL"))
+			{
+				compleix = false;
+				
+			}
+			
+			else if (separo[1].charAt(0) != 'c' && separo[1].charAt(0) != 'C' || separo[1].charAt(1) != ':' || separo[1].charAt(2) != '\\')
+			{
+				compleix = false;
+				
+			}
+			
+			try {
+		        if (registres < 1 || registres > 1000) {
+		            return false; // Número de registros fora de rang
+		        }
+		    } catch (NumberFormatException e) {
+		        return false; // Error al convertir a entero, formato inválido
+		    }
+			
+		}
+		return compleix;
+	} 
 	
 	
 	
