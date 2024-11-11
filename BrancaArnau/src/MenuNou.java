@@ -82,21 +82,28 @@ public class MenuNou {
 	      //Condicio de que si la primera linia no es correcte no entro a llegir les altres linies
 	    if (compleix)
 	    {
+	    	 String arxius[] =  arxiuSeleccio();
 	    	 while ((linea=lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
 		      {
 		    	 
 	       		//System.out.println(linea);
 		    	  
-		    	  String [] camps=linea.split("#");
-		    	   	  
+		    	  String [] camps=linea.split("#");   	  
 		    	  
-		    	  System.out.println(camps[0]); 
-		    
+		    	 // System.out.println(camps[0]); 
+		    	
+		    	  
+		    	  
 		      }
 
+	    	 
 	        lector.close();
-		   
-				
+	        
+	        
+	        
+		 
+			
+		    
 			
 	    }
 	    
@@ -144,6 +151,24 @@ public class MenuNou {
 	} 
 	
 	
+	
+	public static String[] arxiuSeleccio () {
+		
+		File ruta = new File ("C:\\Users\\arnau\\Documents\\ArxiusProjecte");
+		File [] arxius = ruta.listFiles();
+		String separo[]=null;
+		
+		
+		for (int i=0;i<arxius.length;i++)
+		{
+			separo=arxius[i].getName().split("\\.");	//Separem els arxius per . per a que no agafi l'extensio
+			//System.out.println(separo[0]);
+		}
+		
+		return separo;
+		
+		
+	}
 	
 	
 	
