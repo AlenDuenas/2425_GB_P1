@@ -14,7 +14,7 @@ public class contrasenya {
 		String contrasenyaMajuscules;
 		String contrasenyaSimbols;
 		
-		
+		 
 		//Imprimim el menu de benvinguda 
 		menu();
 		
