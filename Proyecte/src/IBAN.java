@@ -3,7 +3,7 @@ import java.math.BigInteger;
 public class IBAN {
 	
 	public static void main(String[] args) {
-                GenerarIban();
+               System.out.println(GenerarIban()); 
 	}
 	/**
 	 * Genera un IBAN aleatori per a un país seleccionat aleatòriament.
@@ -18,7 +18,7 @@ public class IBAN {
 	 * A més, la funció calcula el codi de control correcte per a l'IBAN 
 	 * 
 	 */
-	public static void GenerarIban(){
+	public static String GenerarIban(){
 		Random random = new Random();
 		String CC = "00";
 		int KK = random.nextInt(100);
@@ -226,7 +226,9 @@ public class IBAN {
                 if (!temporalNum.equals(uno)) {
                 	GenerarIban();
                 }
-                System.out.println(ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN);
-
+                //System.out.println(ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN);
+                String IbanFinal = ES[num] +" "+ CC +" "+ BBBB[num] +" "+ GGGG +" "+ KK +" "+NNNN;
+                return IbanFinal;
+                
 	}
-}
+} 
