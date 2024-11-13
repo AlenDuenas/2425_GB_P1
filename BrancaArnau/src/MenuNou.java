@@ -12,7 +12,7 @@ public class MenuNou {
 		
 		String [] opcions = OpcionsCamp0 (teclat);	//Opcions de l'arxiu d'entrada
 		
-		
+		funcions (opcions);
 		
 		/*for (int i=0;i<opcions.length;i++)
 		{
@@ -47,7 +47,81 @@ public class MenuNou {
 	}
 	
 	
-	public static void funcions () {
+	public static void funcions (String [] opcions) {
+		int opcio;
+		for (int i=0; i < opcions.length; i++)
+		{
+			opcio = Integer.parseInt(opcions[i]);
+			
+			
+			switch (opcio) {
+			case 1:	
+		 	    System.out.println("Ha triat la funcio 1");
+	 	    break;
+	 	    case 2:
+	 	    	 System.out.println("Ha triat la funcio 2");
+	 	    break;
+	 	    case 3:	
+	 	    	 System.out.println("Ha triat la funcio 3"); 
+	 	    break;
+	 	    case 4:
+	 	    	 System.out.println("Ha triat la funcio 4");
+	 	    break;
+	 	    case 5:
+	 	    	 System.out.println("Ha triat la funcio 5");
+	 	    break;
+	 	    case 6:
+	 	    	 System.out.println("Ha triat la funcio 6");
+	 	    break;
+	 	    case 7:
+	 	    	 System.out.println("Ha triat la funcio 7");
+	 	    break;	
+	 	    case 8:
+	 	    	 System.out.println("Ha triat la funcio 8");
+	 	    break;
+	 	    case 9:
+	 	    	 System.out.println("Ha triat la funcio 9");
+	 	    break;
+	 	    case 10:
+	 	    	 System.out.println("Ha triat la funcio 10");
+	 	    break;
+	 	    case 11:
+	 	    	 System.out.println("Ha triat la funcio 11");
+		 	break;
+	 	    case 12:
+	 	    	 System.out.println("Ha triat la funcio 12");
+	 	    break;
+	 	    case 13:
+	 	    	 System.out.println("Ha triat la funcio 13");	    
+	 	    break;
+	 	    case 14:
+	 	    	 System.out.println("Ha triat la funcio 14");
+	 	    break;
+	 	    case 15:
+	 	    	 System.out.println("Ha triat la funcio 15");
+	 	    break;
+	 	    case 16:
+	 	    	 System.out.println("Ha triat la funcio 16");
+	 	    break;
+	 	    case 17:
+	 	    	 System.out.println("Ha triat la funcio 17");
+	 		break;
+	 	    case 18:
+	 	    	 System.out.println("Ha triat la funcio 18");
+	 	    break;
+	 	    case 19:
+	 	    	 System.out.println("Ha triat la funcio 19");
+	 	    break;	
+	 	    default:
+	 	    	System.out.println("opcio no valida");
+	 	    	
+	 	    	break;
+
+			}
+			
+		}
+		
+		
 		
 	}
 	
