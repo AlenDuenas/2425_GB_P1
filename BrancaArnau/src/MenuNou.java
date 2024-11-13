@@ -9,9 +9,15 @@ public class MenuNou {
 		// TODO Auto-generated method stub
 		Scanner teclat = new Scanner(System.in);
 		
-		opcions(teclat);
+		
+		String [] opcions = OpcionsCamp0 (teclat);	//Opcions de l'arxiu d'entrada
 		
 		
+		
+		/*for (int i=0;i<opcions.length;i++)
+		{
+			System.out.println(opcions[i]);
+		}
 		
 	
 		/*try {		
@@ -39,6 +45,22 @@ public class MenuNou {
 		}
 		*/
 	}
+	
+	
+	public static void funcions () {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	public static String  primeraLinia () {
@@ -63,11 +85,14 @@ public class MenuNou {
 		return linea;
 	}
 	
-	public static void  opcions (Scanner teclat) {
+	public static String [] OpcionsCamp0 (Scanner teclat) {
 		int cont=0;
-		String guardo [] = new String [20] ;
+		
 		//int i=0;
 		String primeraLinea="";
+		int k=0;
+		String [] camps= null;
+		
 		
 		try {
 		
@@ -77,44 +102,63 @@ public class MenuNou {
 	      String linea="";
 	      primeraLinea=lector.readLine();
 	      
+	      
+	      
 	    boolean compleix = comprovacioPrimeraLinia(primeraLinea);
 	      
 	      //Condicio de que si la primera linia no es correcte no entro a llegir les altres linies
 	    if (compleix)
 	    {
-	    	 String arxius[] =  arxiuSeleccio();
-	    	 while ((linea=lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
+	    	
+	    	 while ((lector.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
 		      {
-		    	 
-	       		//System.out.println(linea);
-		    	  
-		    	  String [] camps=linea.split("#");   	  
-		    	  
-		    	 // System.out.println(camps[0]); 
+	    		
 		    	
+		    	  cont++;
+		    	 
+		      }   lector.close();
+		      
+		      
+		      
+		      //
+		      BufferedReader lector2 = new BufferedReader(new FileReader(arxiu));
+		      String guardo [] = new String [cont];
+		      linea=lector2.readLine();
+		      while ((linea = lector2.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
+		      {
+	    		
+		    	  //System.out.println(linea);
+			    	 //System.out.println(guardo[k]);
+			    	  camps=linea.split("#");
+			    	  guardo[k] = camps[0];
+			    	  k++;
+			    	//System.out.println(camps[0]); 
 		    	  
-		    	  
-		      }
+		    	 
+		      } lector2.close();
+		      
 
-	    	 
-	        lector.close();
-	        
-	        
-	        
-		 
-			
-		    
-			
+		     
+		      
+		    //k=0;   
+		      boolean surt[] = comprovoCamps0(camps[0], cont) ; 
+		      //String opcions[] = arxiuSeleccio();//Noms dels arxius  
+		      return guardo;
 	    }
 	    
 	    else 
 	    {
 	    	System.out.println("No compleix");
+	    	return null;
 	    }
+	   
 	     
-		}catch (Exception pasanCosas) {
-			pasanCosas.printStackTrace();
-		}
+	   
+	}catch (Exception pasanCosas) {
+		pasanCosas.printStackTrace();
+	}
+		return null;
+		
 	}
 	
 	
@@ -150,22 +194,47 @@ public class MenuNou {
 		return compleix;
 	} 
 	
+	public static boolean[] comprovoCamps0(String  valors, int longitut) {
+		boolean compleix[] = new boolean [longitut] ;
+		int numero = Integer.parseInt(valors);
+		for (int i=0; i<longitut; i++)
+		{
+			if (numero < 1 && numero > 19)
+			{
+				compleix[i] = false;
+			}
+			
+			else 
+			{
+				compleix[i]=true;
+			}			
+		}
+		return compleix;
+		
+	}
 	
 	
-	public static String[] arxiuSeleccio () {
+	
+	
+	
+	
+	public static String [] arxiuSeleccio () {
 		
 		File ruta = new File ("C:\\Users\\arnau\\Documents\\ArxiusProjecte");
 		File [] arxius = ruta.listFiles();
-		String separo[]=null;
 		
+		String separo[]=null;
+		String opcions[]= new String [20];
 		
 		for (int i=0;i<arxius.length;i++)
 		{
 			separo=arxius[i].getName().split("\\.");	//Separem els arxius per . per a que no agafi l'extensio
 			//System.out.println(separo[0]);
+			opcions[i]=separo[0];
+			//System.out.println(opcions[i]);
 		}
 		
-		return separo;
+		return opcions;
 		
 		
 	}
