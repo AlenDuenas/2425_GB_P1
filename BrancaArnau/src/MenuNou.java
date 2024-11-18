@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Random;
 import java.util.Scanner;
 
 public class MenuNou {
@@ -155,16 +156,38 @@ public class MenuNou {
 			 	    case 12:
 			 	    	 System.out.println("Ha triat la funcio 12");
 			 	    	 
+			 	    	 
+			 	    	 
 			 	    	 String coma[];
 			 	    	
+			 	    	 			 	    	 
 			 	    	 
-			 	    	 coma=separo[2].split(",");			 	    	
+			 	    	 coma=separo[2].split(",");			 	    		
+			 	    		
 			 	    	 int valor1=Integer.parseInt(coma[0]);
 			 	    	 int valor2=Integer.parseInt(coma[1]);;
 			 	    	 int valor3=Integer.parseInt(coma[2]);;
 			 	    	 
 			 	    	 
+			 	    	 if (valor1<=15 && valor1>0 && valor2>0 && valor2<999 && valor3>0 && valor3<=1000)
+			 	    	 {
+			 	    		 double resultatDouble;
+				 			 int opcions[];
+				 			
+				 			 opcions=opcions(valor1, valor2, valor3);
+				 			
+				 			
+				 			 resultatDouble=numInt(opcions[0], opcions[1], opcions[2]);
+				 			 
+				 			 System.out.println(resultatDouble);
+			 	    	 }
 			 	    	 
+			 	    	 
+			 	    	 else 
+			 	    	 {
+			 	    		errors =true;
+			 	    	 }
+			 			
 			 	    	 
 			 	    	 
 			 	    	 
@@ -462,6 +485,54 @@ public class MenuNou {
 	}*/
 	
 	
+	
+	
+	
+	public static int [] opcions (int valor1, int valor2, int valor3) {
+		int minim;
+		int maxim;
+		int decimals;
+		int opcio[]=new int[3];
+		
+		System.out.println("El valor escollit  es "+valor2);
+		minim=valor2;
+		
+		if (minim==0)
+		minim=0;
+		
+		System.out.println("El valor escollit es "+valor3);
+		maxim=valor3;
+		
+		if (maxim==0)
+			maxim=1000;
+
+		System.out.print("Els decimals entrats son "+valor1);
+		decimals=valor1;
+		
+		opcio[0]=minim;
+		opcio[1]=maxim;
+		opcio[2]=decimals;
+		
+		return opcio;
+	}
+	
+	
+	
+	public static Double numInt (int minim, int maxim, int decimals) {
+		Random bombo=new Random(maxim);
+		
+		
+		// Generar un número aleatori amb decimals dins del rang
+        double numAleatorio =0;
+        numAleatorio = minim + (maxim - minim) * bombo.nextDouble();
+
+        // Redondeja el número a la cantitat de decimals especificada
+        double factor = Math.pow(10, decimals);  // Factor per moure els decimals 
+        double numero = Math.round(numAleatorio * factor) / factor;
+		
+		
+		return numero;	
+	}
 	
 	
 }
