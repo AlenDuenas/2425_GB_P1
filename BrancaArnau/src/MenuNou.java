@@ -112,6 +112,7 @@ public class MenuNou {
 					else 
 					{
 						System.out.println("ERROR hi ha una lletra ");
+						compleix=false;
 					}
 					
 					
@@ -182,12 +183,13 @@ public class MenuNou {
 				 			 System.out.println("El numero es "+resultatDouble);
 			 	    	 }
 			 	    	 
+			 	    	 						
 			 	    	 
 			 	    	 else 
 			 	    	 {
 			 	    		errors =true;
 			 	    		
-			 	    	 }
+			 	    	 }	System.out.println("Holaxx");
 
 			 	    break;
 			 	    case 13:
@@ -199,18 +201,20 @@ public class MenuNou {
 			 	    case 15:
 			 	    	 System.out.println("Ha triat la funcio 15");
 			 	    	 
-			 	    	 System.out.println("Hola");
+			 	    	 //System.out.println("Hola");
 			 	    	 String opcionsContrasenya[];
 			 	    	 
 			 	    	 opcionsContrasenya=separo[2].split(",");
 			 	    	 
 			 	    	 int opContr1=Integer.parseInt(opcionsContrasenya[0]);
-			 	    	 int opContr2=Integer.parseInt(opcionsContrasenya[1]);;
-			 	    	 int opContr3=Integer.parseInt(opcionsContrasenya[2]);;
-			 	    	 int opContr4=Integer.parseInt(opcionsContrasenya[3]);;
+			 	    	 int opContr2=Integer.parseInt(opcionsContrasenya[1]);
+			 	    	 int opContr3=Integer.parseInt(opcionsContrasenya[2]);
+			 	    	 int opContr4=Integer.parseInt(opcionsContrasenya[3]);
+			 	    	 int longitut=Integer.parseInt(opcionsContrasenya[4]);
 			 	    	 
 			 	    	 
-			 	    	 if (opContr1==1 || opContr1==2 && opContr2==1 || opContr2==2 && opContr3==1 || opContr3==2 && opContr4>3 )
+			 	    	 //System.out.println(opcionsContrasenya[0]+opcionsContrasenya[1]+opcionsContrasenya[2]+opcionsContrasenya[3]+opcionsContrasenya[4]);
+			 	    	if (opContr1==1 || opContr1==2 && opContr2==1 || opContr2==2 && opContr3==1 || opContr3==2 && opContr4==1 || opContr4==2 && longitut>3 )
 			 	    	 {
 
 			 	    		// System.out.println("Hola");
@@ -226,7 +230,7 @@ public class MenuNou {
 			 	    		menu();
 			 	    		
 			 	    		//Guardem totes les opcions rebudes enn un arrray desde el main 
-			 	    		opcioContrasenya = opcions (opContr1, opContr2, opContr3, opContr4);
+			 	    		opcioContrasenya = opcions (opContr1, opContr2, opContr3, opContr4, longitut);
 			 	    		
 			 	    		//Guardem en una variable la longitut que ens han entrat per teclat
 			 	    		int opcioLongitut = opcioContrasenya[4];
@@ -580,7 +584,7 @@ public class MenuNou {
 	}*/
 	
 	
-	
+	//FUNCIONS GENERADES
 	
 	
 	public static int [] opcions (int valor1, int valor2, int valor3) {
@@ -631,18 +635,18 @@ public class MenuNou {
 	
 	//Menu
 		public static void menu () {
-			System.out.println("Entri siusplau els següents parametres per poder generar-li la contrasenya ------->");
+			//System.out.println("Entri siusplau els següents parametres per poder generar-li la contrasenya ------->");
 		}
 		 
 		//Aqui demanem si vol minuscules, numeros, majuscules, simbols etc...
-		public static int[] opcions(int valor1, int valor2, int valor3, int longitut) {
+		public static int[] opcions(int valor1, int valor2, int valor3, int valor4, int longitut) {
 			boolean condicio= true;
 			int opcions [] = new int [5];
 
 			
 			while (condicio)
 			{
-				System.out.println("Entri si vol lletres  1. SI / 2 NO:");
+				//System.out.println("Entri si vol lletres  1. SI / 2 NO:");
 				int opcioLletres = valor1;
 				
 				if (opcioLletres < 1 || opcioLletres > 2)
@@ -663,7 +667,7 @@ public class MenuNou {
 			
 			while (condicio)
 			{
-				System.out.println("Entri si vol numeros  1. SI / 2 NO:");
+				//System.out.println("Entri si vol numeros  1. SI / 2 NO:");
 				int opcioNumeros = valor2;
 				
 				if (opcioNumeros < 1 || opcioNumeros > 2)
@@ -683,7 +687,7 @@ public class MenuNou {
 			
 			while (condicio)
 			{
-				System.out.println("Entri si vol majuscules  1. SI / 2 NO:");
+				//System.out.println("Entri si vol majuscules  1. SI / 2 NO:");
 				int opcioMajuscules = valor3;
 				
 				if (opcioMajuscules < 1 || opcioMajuscules > 2)
@@ -703,8 +707,8 @@ public class MenuNou {
 			
 			while (condicio)
 			{
-				System.out.println("Entri si vol simbols  1. SI / 2 NO:");
-				int opcioSimbols = valor3;
+				//System.out.println("Entri si vol simbols  1. SI / 2 NO:");
+				int opcioSimbols = valor4;
 				
 				if (opcioSimbols < 1 || opcioSimbols > 2)
 				{
@@ -722,7 +726,7 @@ public class MenuNou {
 			
 			while (condicio)
 			{
-				System.out.println("Entri la longitut de la contrasenya");
+				//System.out.println("Entri la longitut de la contrasenya");
 				int opcioLongitut = longitut;
 				
 				if (opcioLongitut < 3)
