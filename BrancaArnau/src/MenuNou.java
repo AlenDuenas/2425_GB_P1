@@ -65,9 +65,10 @@ public class MenuNou {
 		      
 				for (int i=0; i < lectura.length; i++)
 				{
-					//Seprem la linia sensera per el seu separador #
+					//Separem la linia sensera per el seu separador #
 					separo = lectura[i].split("#");
 					compleix=true;
+					//System.out.println(separo[0]);
 					if (esNumero(separo[0]))//Comprovo que el primer camp de la linia sigui un numero
 					{
 						//Ara anem a fer les comprovacions adiens per veure si cumpleix cada camp 
@@ -122,40 +123,40 @@ public class MenuNou {
 				{
 					switch (Integer.parseInt(separo[0])) {
 					case 1:	
-				 	    System.out.println("Ha triat la funcio 1");
+				 	    System.out.println("Ha triat la funcio 1 ");
 			 	    break;
 			 	    case 2:
-			 	    	 System.out.println("Ha triat la funcio 2");
+			 	    	 System.out.println("Ha triat la funcio 2 ");
 			 	    break;
 			 	    case 3:	
-			 	    	 System.out.println("Ha triat la funcio 3"); 
+			 	    	 System.out.println("Ha triat la funcio 3 "); 
 			 	    break;
 			 	    case 4:
-			 	    	 System.out.println("Ha triat la funcio 4");
+			 	    	 System.out.println("Ha triat la funcio 4 ");
 			 	    break;
 			 	    case 5:
-			 	    	 System.out.println("Ha triat la funcio 5");
+			 	    	 System.out.println("Ha triat la funcio 5 ");
 			 	    break;
 			 	    case 6:
-			 	    	 System.out.println("Ha triat la funcio 6");
+			 	    	 System.out.println("Ha triat la funcio 6 ");
 			 	    break;
 			 	    case 7:
-			 	    	 System.out.println("Ha triat la funcio 7");
+			 	    	 System.out.println("Ha triat la funcio 7 ");
 			 	    break;	
 			 	    case 8:
-			 	    	 System.out.println("Ha triat la funcio 8");
+			 	    	 System.out.println("Ha triat la funcio 8 ");
 			 	    break;
 			 	    case 9:
-			 	    	 System.out.println("Ha triat la funcio 9");
+			 	    	 System.out.println("Ha triat la funcio 9 ");
 			 	    break;
 			 	    case 10:
-			 	    	 System.out.println("Ha triat la funcio 10");
+			 	    	 System.out.println("Ha triat la funcio 10 ");
 			 	    break;
 			 	    case 11:
-			 	    	 System.out.println("Ha triat la funcio 11");
+			 	    	 System.out.println("Ha triat la funcio 11 ");
 				 	break;
 			 	    case 12:
-			 	    	 System.out.println("Ha triat la funcio 12");
+			 	    	 System.out.println("Ha triat la funcio 12 ");
 			 	    	 
 			 	    	 
 			 	    	 
@@ -180,7 +181,7 @@ public class MenuNou {
 				 			
 				 			 resultatDouble=numInt(opcions[0], opcions[1], opcions[2]);
 				 			 
-				 			 System.out.println("El numero es "+resultatDouble);
+				 			 System.out.println("El numero es "+resultatDouble+"\n");
 			 	    	 }
 			 	    	 
 			 	    	 						
@@ -189,17 +190,17 @@ public class MenuNou {
 			 	    	 {
 			 	    		errors =true;
 			 	    		
-			 	    	 }	System.out.println("Holaxx");
+			 	    	 }	//System.out.println("Holaxx");
 
 			 	    break;
 			 	    case 13:
-			 	    	 System.out.println("Ha triat la funcio 13");	    
+			 	    	 System.out.println("Ha triat la funcio 13 ");	    
 			 	    break;
 			 	    case 14:
-			 	    	 System.out.println("Ha triat la funcio 14");
+			 	    	 System.out.println("Ha triat la funcio 14 ");
 			 	    break;
 			 	    case 15:
-			 	    	 System.out.println("Ha triat la funcio 15");
+			 	    	 System.out.println("Ha triat la funcio 15 ");
 			 	    	 
 			 	    	 //System.out.println("Hola");
 			 	    	 String opcionsContrasenya[];
@@ -293,7 +294,7 @@ public class MenuNou {
 			 	    		
 			 	    		 //Aqui Passem a la funcio tot tipus de contrasenya generada encara que hagi triat l'opcio o no i la longitut
 			 	    		  String contrasenyaFinal = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
-			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal);
+			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal+"\n");
 			 	    	 }
 			 	    	 
 			 	    	 
@@ -303,15 +304,35 @@ public class MenuNou {
 			 	    break;
 			 	    case 16:
 			 	    	 System.out.println("Ha triat la funcio 16");
+			 	    	 
+			 	    	 String dates[];
+			 	    	 
+			 	    	 dates=separo[2].split(",");
+			 	    	 
+			 	    	int datesMin=Integer.parseInt(dates[0]);
+			 	    	int datesMax=Integer.parseInt(dates[1]);
+			 	    	                                                       
+
+			 			//Zona de variables 
+			 			int [] resultat;
+			 			int data;
+			 			//Zona de codi 
+			 			resultat=valorsInicials(datesMin, datesMax);
+			 			
+			 			data=numAleatori(resultat);
+			 			  
+			 			System.out.println(data+"\n");
+			 	    	 
+			 	    	 
 			 	    break;
 			 	    case 17:
-			 	    	 System.out.println("Ha triat la funcio 17");
+			 	    	 System.out.println("Ha triat la funcio 17 ");
 			 		break;
 			 	    case 18:
-			 	    	 System.out.println("Ha triat la funcio 18");
+			 	    	 System.out.println("Ha triat la funcio 18 ");
 			 	    break;
 			 	    case 19:
-			 	    	 System.out.println("Ha triat la funcio 19");
+			 	    	 System.out.println("Ha triat la funcio 19 ");
 			 	    break;	
 			 	    default:
 			 	    	System.out.println("opcio no valida");
@@ -344,8 +365,8 @@ public class MenuNou {
 	public static  boolean esNumero (String  numero) {
 		
 		 try {
-       	
-			 Double.parseDouble(numero);
+			 
+			 Integer.parseInt(numero);
 			 return true;
    		
    		
@@ -353,6 +374,7 @@ public class MenuNou {
 		      
 		 }catch (Exception pasanCosas) {
 			pasanCosas.printStackTrace();
+			System.out.println("numero buit");
 			return false;
 		 }
 } 
@@ -473,10 +495,15 @@ public class MenuNou {
 	    		
 		    	  //System.out.println(linea);
 		    	 //System.out.println(guardo[k]);
-			    	  //camps=linea.split("#");
-			    	  guardo[k] = linea;	//Guardo totes les linies en un array per despres, més endavant tractar-les
-			    	  k++;
-			    	//System.out.println(camps[0]); 
+			    	  //camps=linea.split("#")
+		    	 /*if(!linea.equals("")) {
+		    		  return;
+		    	  }else {
+		    		 
+		    	  }*/
+		    	  guardo[k] = linea;	//Guardo totes les linies en un array per despres, més endavant tractar-les
+		    	  k++;
+		    	//System.out.println(camps[0]);   
 			    	 
 		    	 
 		      } lector2.close();
@@ -844,6 +871,111 @@ public class MenuNou {
 
 	        return contrasenyaGenerada;
 	    }
+	    
+	    
+	    
+	    public static int[] valorsInicials(int dataMin, int dataMax) {
+	 		int resultat[]=new int[2];
+			int min;
+			int max;
+			boolean condicio=true;
+			
+			
+			while (condicio)
+			{
+			   // System.out.println("Indica siusplau una data minima i maxima per generar --> ");
+			   // System.out.println("Els valors per defecte son: MINIM: 1900 I MAXIM 2023");
+			   // System.out.println("Entri siusplau una data minima, si no vol entrar-ne cap entri un 0");
+			    min = dataMin;
+
+			   // System.out.println("Entri siusplau una data maxima, si no vol entrar-ne cap entri un 1");
+			    max = dataMax;
+
+			    // Validar i assignar valor per defecte si s'introdueixen 0 o 1
+			    if (min == 0) 
+				    {
+				        resultat[0] = 1900; // Valor per defecte
+				    } 
+				    
+			    
+			    else if (min >= 1900 && min <= 2023) 
+				    {
+				        resultat[0] = min;  // Valor validat
+				    } 
+			    
+			    
+			    	else 
+				    {
+				        System.out.println("La data minima no és vàlida, ha de ser entre 1900 i 2023.");
+				        continue; // Torna a demanar les dates
+				    }
+
+			    if (max == 1) 
+			    
+				    {
+				        resultat[1] = 2023; // Valor per defecte
+				    } 
+				    
+			    
+			    else if (max >= 1900 && max <= 2023 && max >= resultat[0])
+			    
+				    {
+				        resultat[1] = max;  // Valor validat
+				    } 
+				    
+			    
+			    else 
+			    
+				    {
+				        System.out.println("La data màxima no és vàlida, ha de ser entre 1900 i 2023 i no pot ser inferior a la data mínima.");
+				        continue; // Torna a demanar les dates
+				    }
+
+			    // Si s'arriba aquí, les dates són vàlides i es surt del bucle
+			    	condicio = false;
+			}
+			
+			
+			
+			
+			
+			System.out.println("Els valors son: ANY MINIM "+resultat[0]+" i ANY MAXIM "+resultat[1]);
+			
+			
+			return resultat;
+		}
+		
+
+		public static int numAleatori(int[] valors) {
+			Random bombo=new Random(valors[1]);
+			int num=0;
+			boolean condicio=true;
+			
+			
+			
+			num=bombo.nextInt();
+			num=num+valors[0];
+			
+			while (condicio)
+			{
+				if (num<valors[0] || num>valors[1])
+				{
+					num=bombo.nextInt();
+					num=num+valors[0];
+
+				}
+				else 
+				{
+					condicio=false;
+				}
+			}
+
+			
+			return num;
+			
+			
+			
+		}
 	
 	
 }
