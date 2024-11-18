@@ -10,14 +10,14 @@ public class MenuNou {
 		Scanner teclat = new Scanner(System.in);
 		
 		
-		String [] opcions = OpcionsCamp0 (teclat);	//Opcions de l'arxiu d'entrada
+		String [] lectura = OpcionsCamp0 (teclat);	//Opcions de l'arxiu d'entrada
 		
-		funcions (opcions);
+		funcions (lectura);
 		
 		/*for (int i=0;i<opcions.length;i++)
 		{
 			System.out.println(opcions[i]);
-		}
+		}*/
 		
 	
 		/*try {		
@@ -46,86 +46,232 @@ public class MenuNou {
 		*/
 	}
 	
-	
-	public static void funcions (String [] opcions) {
-		int opcio;
-		for (int i=0; i < opcions.length; i++)
-		{
-			opcio = Integer.parseInt(opcions[i]);
-			
-			
-			switch (opcio) {
-			case 1:	
-		 	    System.out.println("Ha triat la funcio 1");
-	 	    break;
-	 	    case 2:
-	 	    	 System.out.println("Ha triat la funcio 2");
-	 	    break;
-	 	    case 3:	
-	 	    	 System.out.println("Ha triat la funcio 3"); 
-	 	    break;
-	 	    case 4:
-	 	    	 System.out.println("Ha triat la funcio 4");
-	 	    break;
-	 	    case 5:
-	 	    	 System.out.println("Ha triat la funcio 5");
-	 	    break;
-	 	    case 6:
-	 	    	 System.out.println("Ha triat la funcio 6");
-	 	    break;
-	 	    case 7:
-	 	    	 System.out.println("Ha triat la funcio 7");
-	 	    break;	
-	 	    case 8:
-	 	    	 System.out.println("Ha triat la funcio 8");
-	 	    break;
-	 	    case 9:
-	 	    	 System.out.println("Ha triat la funcio 9");
-	 	    break;
-	 	    case 10:
-	 	    	 System.out.println("Ha triat la funcio 10");
-	 	    break;
-	 	    case 11:
-	 	    	 System.out.println("Ha triat la funcio 11");
-		 	break;
-	 	    case 12:
-	 	    	 System.out.println("Ha triat la funcio 12");
-	 	    break;
-	 	    case 13:
-	 	    	 System.out.println("Ha triat la funcio 13");	    
-	 	    break;
-	 	    case 14:
-	 	    	 System.out.println("Ha triat la funcio 14");
-	 	    break;
-	 	    case 15:
-	 	    	 System.out.println("Ha triat la funcio 15");
-	 	    break;
-	 	    case 16:
-	 	    	 System.out.println("Ha triat la funcio 16");
-	 	    break;
-	 	    case 17:
-	 	    	 System.out.println("Ha triat la funcio 17");
-	 		break;
-	 	    case 18:
-	 	    	 System.out.println("Ha triat la funcio 18");
-	 	    break;
-	 	    case 19:
-	 	    	 System.out.println("Ha triat la funcio 19");
-	 	    break;	
-	 	    default:
-	 	    	System.out.println("opcio no valida");
-	 	    	
-	 	    	break;
+		 
 
+
+	
+	public static void funcions (String [] lectura) {
+		int opcio=0;
+        String separo[];
+        boolean compleix = true;
+        boolean errors = false;
+		  try {   
+		
+			  
+			  
+
+			 // liniaI ();
+		      
+				for (int i=0; i < lectura.length; i++)
+				{
+					//Seprem la linia sensera per el seu separador #
+					separo = lectura[i].split("#");
+					compleix=true;
+					if (esNumero(separo[0]))//Comprovo que el primer camp de la linia sigui un numero
+					{
+						//Ara anem a fer les comprovacions adiens per veure si cumpleix cada camp 
+						if (Integer.parseInt(separo[0]) > 0 && Integer.parseInt(separo[0]) < 10)	//Començem comprovar els camp del 1 al 10
+						{
+							if (separo.length!=2)	//Si el camp senser te mes camps del que toca error 
+							{
+								System.out.println("Error en la linia "+i);
+								compleix=false;
+							}
+							
+							else if (separo[0] == null || separo [1] == null)	//Si un dels dos camps es null error
+							{
+								System.out.println("Error en la linia "+i);
+								compleix=false;
+							}
+
+							
+						}
+						
+						if (Integer.parseInt(separo[0])>10 && Integer.parseInt(separo[0])<20)
+						{
+							
+							
+							if (separo[0] == null || separo [1] == null)	//Si un dels dos camps es null error
+							{
+								System.out.println("Error en la linia "+i + " camps buits");
+								compleix=false;
+								
+							}
+							
+							else if (separo.length !=  2 && separo.length != 3 )
+							{
+								System.out.println("Error en la linia "+i + " nº camps incorrecte");
+								compleix=false;
+							}
+							
+						}
+						
+					}
+					
+					else 
+					{
+						System.out.println("ERROR hi ha una lletra ");
+					}
+					
+					
+					
+					
+				if (compleix)
+				{
+					switch (Integer.parseInt(separo[0])) {
+					case 1:	
+				 	    System.out.println("Ha triat la funcio 1");
+			 	    break;
+			 	    case 2:
+			 	    	 System.out.println("Ha triat la funcio 2");
+			 	    break;
+			 	    case 3:	
+			 	    	 System.out.println("Ha triat la funcio 3"); 
+			 	    break;
+			 	    case 4:
+			 	    	 System.out.println("Ha triat la funcio 4");
+			 	    break;
+			 	    case 5:
+			 	    	 System.out.println("Ha triat la funcio 5");
+			 	    break;
+			 	    case 6:
+			 	    	 System.out.println("Ha triat la funcio 6");
+			 	    break;
+			 	    case 7:
+			 	    	 System.out.println("Ha triat la funcio 7");
+			 	    break;	
+			 	    case 8:
+			 	    	 System.out.println("Ha triat la funcio 8");
+			 	    break;
+			 	    case 9:
+			 	    	 System.out.println("Ha triat la funcio 9");
+			 	    break;
+			 	    case 10:
+			 	    	 System.out.println("Ha triat la funcio 10");
+			 	    break;
+			 	    case 11:
+			 	    	 System.out.println("Ha triat la funcio 11");
+				 	break;
+			 	    case 12:
+			 	    	 System.out.println("Ha triat la funcio 12");
+			 	    	 
+			 	    	 String coma[];
+			 	    	
+			 	    	 
+			 	    	 coma=separo[2].split(",");			 	    	
+			 	    	 int valor1=Integer.parseInt(coma[0]);
+			 	    	 int valor2=Integer.parseInt(coma[1]);;
+			 	    	 int valor3=Integer.parseInt(coma[2]);;
+			 	    	 
+			 	    	 
+			 	    	 
+			 	    	 
+			 	    	 
+			 	    	 
+			 	    	 
+			 	    break;
+			 	    case 13:
+			 	    	 System.out.println("Ha triat la funcio 13");	    
+			 	    break;
+			 	    case 14:
+			 	    	 System.out.println("Ha triat la funcio 14");
+			 	    break;
+			 	    case 15:
+			 	    	 System.out.println("Ha triat la funcio 15");
+			 	    break;
+			 	    case 16:
+			 	    	 System.out.println("Ha triat la funcio 16");
+			 	    break;
+			 	    case 17:
+			 	    	 System.out.println("Ha triat la funcio 17");
+			 		break;
+			 	    case 18:
+			 	    	 System.out.println("Ha triat la funcio 18");
+			 	    break;
+			 	    case 19:
+			 	    	 System.out.println("Ha triat la funcio 19");
+			 	    break;	
+			 	    default:
+			 	    	System.out.println("opcio no valida");
+			 	    	
+			 	    	break;
+
+					}
+					
+				} 
+				if(!compleix) 
+				{
+					  errors =true;
+				}
+				
 			}
+			if(errors) 
+			{
+				  System.out.println("L'arxiu d'entrada te ERRORS");
+			}
+		
 			
+			
+		}catch (Exception pasanCosas) {
+			pasanCosas.printStackTrace();
 		}
 		
-		
-		
+
 	}
 	
+	public static  boolean esNumero (String  numero) {
+		
+		 try {
+       	
+			 Double.parseDouble(numero);
+			 return true;
+   		
+   		
+		        
+		      
+		 }catch (Exception pasanCosas) {
+			pasanCosas.printStackTrace();
+			return false;
+		 }
+} 
 	
+
+	
+	public static void liniaI (String [] linia) {
+	
+		
+		
+		 /*try {
+	       	
+	   		
+	   		
+	   		 int i=0;
+	   		
+	       	File arxiu = new File("C:\\Users\\arnau\\Desktop\\Mo.txt");
+	   		
+	   	    BufferedReader lector = new BufferedReader(new FileReader(arxiu));
+	        
+	           
+	           
+	           lector.readLine();	//Passo de la primera linia 
+	           
+	         String linies [] =null;  
+	          
+			while ((linies[i] = lector.readLine()) != null) 
+			      {
+		    		
+	        	   
+	           	
+			    	
+			      }   lector.close();
+			        
+			      
+		 }catch (Exception pasanCosas) {
+			pasanCosas.printStackTrace();
+		 }
+		 */
+
+}		
 	
 	
 	
@@ -196,26 +342,28 @@ public class MenuNou {
 		      
 		      //
 		      BufferedReader lector2 = new BufferedReader(new FileReader(arxiu));
+		      
 		      String guardo [] = new String [cont];
+		      
 		      linea=lector2.readLine();
 		      while ((linea = lector2.readLine()) != null) //Per poder processar la informació la pàsso a l'String linea per mes endavant dividir-la
 		      {
 	    		
 		    	  //System.out.println(linea);
-			    	 //System.out.println(guardo[k]);
-			    	  camps=linea.split("#");
-			    	  guardo[k] = camps[0];
+		    	 //System.out.println(guardo[k]);
+			    	  //camps=linea.split("#");
+			    	  guardo[k] = linea;	//Guardo totes les linies en un array per despres, més endavant tractar-les
 			    	  k++;
 			    	//System.out.println(camps[0]); 
-		    	  
+			    	 
 		    	 
 		      } lector2.close();
 		      
 
 		     
 		      
-		    //k=0;   
-		      boolean surt[] = comprovoCamps0(camps[0], cont) ; 
+		      //k=0;   
+		      //boolean surt[] = comprovoCamps0(camps[0], cont) ; 
 		      //String opcions[] = arxiuSeleccio();//Noms dels arxius  
 		      return guardo;
 	    }
@@ -268,7 +416,7 @@ public class MenuNou {
 		return compleix;
 	} 
 	
-	public static boolean[] comprovoCamps0(String  valors, int longitut) {
+	/*public static boolean[] comprovoCamps0(String  valors, int longitut) {
 		boolean compleix[] = new boolean [longitut] ;
 		int numero = Integer.parseInt(valors);
 		for (int i=0; i<longitut; i++)
@@ -285,14 +433,14 @@ public class MenuNou {
 		}
 		return compleix;
 		
-	}
+	}*/
 	
 	
 	
 	
 	
 	
-	public static String [] arxiuSeleccio () {
+	/*public static String [] arxiuSeleccio () {
 		
 		File ruta = new File ("C:\\Users\\arnau\\Documents\\ArxiusProjecte");
 		File [] arxius = ruta.listFiles();
@@ -311,7 +459,7 @@ public class MenuNou {
 		return opcions;
 		
 		
-	}
+	}*/
 	
 	
 	

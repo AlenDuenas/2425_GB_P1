@@ -180,7 +180,7 @@ public class contrasenya {
 		
 		while (condicio)
 		{
-			System.out.println("Entri la longitut de la contrasenya  1. SI / 2 NO:");
+			System.out.println("Entri la longitut de la contrasenya");
 			int opcioLongitut = teclat.nextInt();
 			
 			if (opcioLongitut < 3)
