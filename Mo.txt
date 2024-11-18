@@ -1,0 +1,9 @@
+XML#C:\\Users\\arnau\\Desktop#300
+2#que
+5#que
+9#hdsoda
+8#siu
+11#guau#dd
+15#cachau#1,2,1,1,7
+12#number#5,8,15
+16#dates#1950,2021
