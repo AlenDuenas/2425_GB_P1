@@ -56,6 +56,11 @@ public class MenuNou {
         String separo[];
         boolean compleix = true;
         boolean errors = false;
+        
+        
+        
+        
+        
 		  try {   
 		
 			  
@@ -182,6 +187,8 @@ public class MenuNou {
 				 			 resultatDouble=numInt(opcions[0], opcions[1], opcions[2]);
 				 			 
 				 			 System.out.println("El numero es "+resultatDouble+"\n");
+				 			 String resultat=  resultatDouble+"";
+				 			 String nom = separo[1];
 			 	    	 }
 			 	    	 
 			 	    	 						
@@ -191,6 +198,8 @@ public class MenuNou {
 			 	    		errors =true;
 			 	    		
 			 	    	 }	//System.out.println("Holaxx");
+			 	    	 
+			 	    	
 
 			 	    break;
 			 	    case 13:
@@ -295,8 +304,11 @@ public class MenuNou {
 			 	    		 //Aqui Passem a la funcio tot tipus de contrasenya generada encara que hagi triat l'opcio o no i la longitut
 			 	    		  String contrasenyaFinal = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
 			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal+"\n");
+			 	    	      
+			 	    	     String resultat=  contrasenyaFinal+"";
+				 			 String nom = separo[1];
 			 	    	 }
-			 	    	 
+			 	    	
 			 	    	 
 			 	    	 
 			 	    	 
@@ -322,6 +334,9 @@ public class MenuNou {
 			 			data=numAleatori(resultat);
 			 			  
 			 			System.out.println(data+"\n");
+			 			
+			 			 String resultatData=  data+"";
+			 			 String nom = separo[1];
 			 	    	 
 			 	    	 
 			 	    break;
