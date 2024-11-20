@@ -336,7 +336,7 @@ public class MenuNou {
 			 			System.out.println(data+"\n");
 			 			
 			 			 String resultatData=  data+"";
-			 			 String nom = separo[1];
+			 			 String nom = separo[1]; 
 			 	    	 
 			 	    	 
 			 	    break;
