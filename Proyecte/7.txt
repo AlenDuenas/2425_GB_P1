@@ -1,0 +1,219 @@
+Arquitectura
+Biologia
+Química
+Física
+Matemàtiques
+Enginyeria
+Informàtica
+Dret
+Psicologia
+Economia
+Història
+Sociologia
+Antropologia
+Filologia
+Educació
+Turisme
+Ciències Ambientals
+Medicina
+Infermeria
+Odontologia
+Farmàcia
+Veterinària
+Ciències Polítiques
+Gestió Empresarial
+Marketing
+Comunicación
+Art
+Música
+Dansa
+Teatre
+Cinema
+Història de l'Art
+Arquitectura d'Interiors
+Disseny Gràfic
+Moda
+Desenvolupament Web
+Ciberseguretat
+Gestió de Recursos Humans
+Psicopedagogia
+Antropologia Social
+Estudis de Gènere
+Estudis Culturals
+Lingüística
+Filosofia
+Estadística
+Geografia
+Enginyeria Electrònica
+Telecomunicacions
+Enginyeria Mecànica
+Enginyeria Civil
+Enginyeria Química
+Enginyeria Industrial
+Enginyeria de Materials
+Enginyeria de l'Automoció
+Estudis de Traducció
+Estudis Internacionals
+Relacions Públiques
+Gestió de Projectes
+Estudis de la Comunicació
+Educació Infantil
+Educació Primària
+Formació Professional
+Estudis de Disseny
+Estudis d'Arquitectura
+Estudis d'Animació
+Ciència de Dades
+Enginyeria de Software
+Biotecnologia
+Genètica
+Neurociència
+Psicologia Clínica
+Psicologia Social
+Psicologia Educativa
+Nutrició
+Sociologia del Treball
+Estudis de Pau
+Estudis de Conflictologia
+Estudis d'Administració Pública
+Estudis de Medi Ambient
+Estudis d'Educació Especial
+Ciències de l'Activitat Física
+Fisioteràpia
+Oftalmologia
+Radiologia
+Terapia Ocupacional
+Ciències de la Salut
+Estudis de la Música
+Història de la Música
+Estudis de la Dansa
+Estudis del Teatre
+Gestió Cultural
+Gestió de l'Art
+Estudis sobre la Diversitat
+Estudis de la Comunicació Visual
+Mediació
+Coaching
+Estudis sobre la Infància
+Estudis sobre l'Adolescència
+Estudis de la Família
+Estudis sobre la Gent Gran
+Estudis sobre la Discapacitat
+Estudis sobre la Inclusió
+Estudis sobre la Salut Mental
+Estudis sobre la Sexualitat
+Estudis sobre la Tecnologia
+Estudis sobre la Societat de la Informació
+Estudis sobre la Innovació
+Estudis sobre el Desenvolupament Sostenible
+Estudis sobre la Globalització
+Estudis sobre la Cultura Popular
+Estudis sobre el Patrimoni Cultural
+Estudis sobre el Patrimoni Històric
+Estudis sobre l'Arquitectura Històrica
+Estudis sobre l'Art Contemporani
+Estudis sobre la Fotografia
+Estudis sobre el Cinema Documental
+Estudis sobre la Publicitat
+Estudis sobre la Cultura Digital
+Estudis sobre el Màrqueting Digital
+Estudis sobre la Societat Digital
+Estudis sobre les Xarxes Socials
+Estudis sobre el Comerç Electrònic
+Estudis sobre la Intel·ligència Artificial
+Estudis sobre la Robòtica
+Estudis sobre la Innovació Tecnològica
+Estudis sobre la Ciberseguretat
+Estudis sobre el Desenvolupament Humà
+Estudis sobre la Mobilitat
+Estudis sobre el Transport Sostenible
+Estudis sobre la Logística
+Estudis sobre la Gestió del Coneixement
+Estudis sobre el Lideratge
+Estudis sobre la Motivació
+Estudis sobre el Treball en Equip
+Estudis sobre la Creativitat
+Estudis sobre l'Emprenedoria
+Estudis sobre la Responsabilitat Social
+Estudis sobre l'Ètica
+Estudis sobre la Filosofia de l'Educació
+Estudis sobre la Història de l'Educació
+Estudis sobre la Política Educativa
+Estudis sobre la Tecnologia Educativa
+Estudis sobre la Formació Contínua
+Estudis sobre la Formació de Formadors
+Estudis sobre la Innovació Educativa
+Estudis sobre el Currículum
+Estudis sobre l'Ensenyament a Distància
+Estudis sobre la Didàctica
+Estudis sobre l'Aprenentatge
+Estudis sobre la Motivació a l'Aprenentatge
+Estudis sobre la Diversitat a l'Aula
+Estudis sobre la Inclusió Educativa
+Estudis sobre la Salut Escolar
+Estudis sobre la Mediació Escolar
+Estudis sobre el Voluntariat
+Estudis sobre la Solidaritat
+Estudis sobre el Compromís Social
+Estudis sobre la Participació Ciutadana
+Estudis sobre la Democràcia
+Estudis sobre els Drets Humans
+Estudis sobre la Justícia Social
+Estudis sobre la Pau i la Conflicte
+Estudis sobre la Seguretat
+Estudis sobre la Defensa
+Estudis sobre la Geopolítica
+Estudis sobre el Terrorisme
+Estudis sobre la Immigració
+Estudis sobre la Diversitat Cultural
+Estudis sobre les Relacions Internacionals
+Estudis sobre la Cooperació Internacional
+Estudis sobre els Organismes Internacionals
+Estudis sobre els Conflictes Internacionals
+Estudis sobre la Sociologia de la Guerra
+Estudis sobre la Filosofia de la Pau
+Estudis sobre la Història de les Relacions Internacionals
+Estudis sobre la Seguretat Internacional
+Estudis sobre la Política Internacional
+Estudis sobre el Comerç Internacional
+Estudis sobre la Economia Global
+Estudis sobre el Desenvolupament Internacional
+Estudis sobre la Societat Civil
+Estudis sobre el Feminisme
+Estudis sobre la Diversitat de Gènere
+Estudis sobre la Igualtat
+Estudis sobre els Drets de les Dones
+Estudis sobre l'Homofòbia
+Estudis sobre la LGTBIQ+
+Estudis sobre la Cultura LGTBIQ+
+Estudis sobre el Consentiment
+Estudis sobre la Salut Sexual
+Estudis sobre la Violència de Gènere
+Estudis sobre la Prevenció
+Estudis sobre la Rehabilitació
+Estudis sobre la Justícia Restaurativa
+Estudis sobre la Victimologia
+Estudis sobre la Criminologia
+Estudis sobre la Delinqüència
+Estudis sobre la Política Criminal
+Estudis sobre la Seguretat Ciutadana
+Estudis sobre la Policia
+Estudis sobre la Penologia
+Estudis sobre la Presó
+Estudis sobre el Tractament de Delinqüents
+Estudis sobre la Reinserció
+Estudis sobre la Mediació Penal
+Estudis sobre la Victimització
+Estudis sobre la Prevenció de la Delinqüència
+Estudis sobre la Justícia Penal
+Estudis sobre la Delinqüència Juvenil
+Estudis sobre la Violència Juvenil
+Estudis sobre la Intervenció Social
+Estudis sobre el Treball Social
+Estudis sobre la Responsabilitat Social Corporativa
+Estudis sobre la Gestió de Crisi
+Estudis sobre el Lideratge Social
+Estudis sobre el Servei Comunitari
+Estudis sobre la Mediació Comunitària
+Estudis sobre la Transformació Social
+Estudis sobre la Innovació Social
