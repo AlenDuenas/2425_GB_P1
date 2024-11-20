@@ -57,13 +57,13 @@ public class MenuNou {
         boolean compleix = true;
         boolean errors = false;
         
-        
-        
-        
+    	
+      
+          	
         
 		  try {   
 		
-			  
+		   
 			  
 
 			 // liniaI ();
@@ -123,9 +123,12 @@ public class MenuNou {
 					
 					
 					
-					
+					  
 				if (compleix)
 				{
+					
+					 String  resultat[]=new String [lectura.length];	//Creo dos arrays per poder guardar el nom i el resultat generat en la funcio que cridi
+				     String nom[]=new String [lectura.length];	
 					switch (Integer.parseInt(separo[0])) {
 					case 1:	
 				 	    System.out.println("Ha triat la funcio 1 ");
@@ -161,43 +164,31 @@ public class MenuNou {
 			 	    	 System.out.println("Ha triat la funcio 11 ");
 				 	break;
 			 	    case 12:
-			 	    	 System.out.println("Ha triat la funcio 12 ");
+			 	    	  System.out.println("Ha triat la funcio 12 ");
+			 	    	  double resultatDouble;
+			 	          int opcions[];
 			 	    	 
-			 	    	 
-			 	    	 
-			 	    	 String coma[];
-			 	    	
-			 	    	 			 	    	 
-			 	    	 
-			 	    	 coma=separo[2].split(",");			 	    		
-			 	    		
-			 	    	 int valor1=Integer.parseInt(coma[0]);
-			 	    	 int valor2=Integer.parseInt(coma[1]);;
-			 	    	 int valor3=Integer.parseInt(coma[2]);;
-			 	    	 
-			 	    	 
-			 	    	 if (valor1<=15 && valor1>0 && valor2>0 && valor2<999 && valor3>0 && valor3<=1000)
-			 	    	 {
-			 	    		 double resultatDouble;
-				 			 int opcions[];
-				 			
-				 			 opcions=opcions(valor1, valor2, valor3);
-				 			
-				 			
-				 			 resultatDouble=numInt(opcions[0], opcions[1], opcions[2]);
-				 			 
-				 			 System.out.println("El numero es "+resultatDouble+"\n");
-				 			 String resultat=  resultatDouble+"";
-				 			 String nom = separo[1];
-			 	    	 }
-			 	    	 
-			 	    	 						
-			 	    	 
-			 	    	 else 
-			 	    	 {
-			 	    		errors =true;
-			 	    		
-			 	    	 }	//System.out.println("Holaxx");
+			 	    	String coma[] = separo[2].split(",");
+			 	        int valor1 = Integer.parseInt(coma[0]);
+			 	        int valor2 = Integer.parseInt(coma[1]);
+			 	        int valor3 = Integer.parseInt(coma[2]);
+
+			 	        if (valor1 <= 15 && valor1 > 0 && valor2 > 0 && valor2 < 999 && valor3 > 0 && valor3 <= 1000) {
+			 	           
+
+			 	            opcions = opcions(valor1, valor2, valor3);
+			 	            resultatDouble = numInt(opcions[0], opcions[1], opcions[2]);
+
+			 	            resultat[i] = resultatDouble + "";	//Guardo el resultat a la mateixa posicio del bucle 
+			 	            nom[i] = separo[1];
+			 	           
+
+			 	            System.out.println("El número es " + resultatDouble + "\n");
+			 	        } 
+			 	        else 
+			 	        {
+			 	            errors = true;
+			 	        }	//System.out.println("Holaxx");
 			 	    	 
 			 	    	
 
@@ -305,8 +296,12 @@ public class MenuNou {
 			 	    		  String contrasenyaFinal = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
 			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal+"\n");
 			 	    	      
-			 	    	     String resultat=  contrasenyaFinal+"";
-				 			 String nom = separo[1];
+			 	    	     resultat[i]=  contrasenyaFinal+"";//Guardo el resultat a la mateixa posicio del bucle 
+				 			 nom [i]= separo[1];
+				 			 
+				 			 
+				 			//System.out.println(resultat[k]);
+							//System.out.println(nom[k]);
 			 	    	 }
 			 	    	
 			 	    	 
@@ -326,18 +321,21 @@ public class MenuNou {
 			 	    	                                                       
 
 			 			//Zona de variables 
-			 			int [] resultat;
+			 			int [] resData;
 			 			int data;
 			 			//Zona de codi 
-			 			resultat=valorsInicials(datesMin, datesMax);
+			 			resData=valorsInicials(datesMin, datesMax);
 			 			
-			 			data=numAleatori(resultat);
+			 			data=numAleatori(resData);
 			 			  
 			 			System.out.println(data+"\n");
 			 			
-			 			 String resultatData=  data+"";
-			 			 String nom = separo[1]; 
+			 			 resultat[i]=  data+"";//Guardo el resultat a la mateixa posicio del bucle 
+			 			 nom[i] = separo[1]; 
+			 	    	
 			 	    	 
+			 	    	//System.out.println(resultat[k]);
+						//System.out.println(nom[k]);
 			 	    	 
 			 	    break;
 			 	    case 17:
@@ -355,6 +353,10 @@ public class MenuNou {
 			 	    	break;
 
 					}
+						if (resultat[i]!=null && nom[i]!=null)
+					    System.out.println("Nom: " + nom[i] + ", Resultat: " + resultat[i]);
+					
+			
 					
 				} 
 				if(!compleix) 
