@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -64,8 +65,11 @@ public class MenuNou {
 		  try {   
 		
 		   
+			  String primeraLinia=primeraLinia();
 			  
-
+			  String sepPrimera[] =primeraLinia.split("#");
+			  
+			  
 			 // liniaI ();
 		      
 				for (int i=0; i < lectura.length; i++)
@@ -353,10 +357,12 @@ public class MenuNou {
 			 	    	break;
 
 					}
-						if (resultat[i]!=null && nom[i]!=null)
-					    System.out.println("Nom: " + nom[i] + ", Resultat: " + resultat[i]);
+					if (resultat[i]!=null && nom[i]!=null)
+				    System.out.println("Nom: " + nom[i] + ", Resultat: " + resultat[i]);
+					//FUNCIO PER ESCRIURE XML
 					
 			
+						
 					
 				} 
 				if(!compleix) 
@@ -435,7 +441,20 @@ public class MenuNou {
 }		
 	
 	
-	
+	/*public static void escrituraXML (String [] nom, String [] resultat) {
+		try (FileWriter writer = new FileWriter("resultats.xml")) {
+		    writer.write("<resultats>\n");
+		    for (int i = 0; i < resultat.size(); i++) {
+		        writer.write("  <funcio>\n");
+		        writer.write("    <nom>" + nom.get(i) + "</nom>\n");
+		        writer.write("    <resultat>" + resultat.get(i) + "</resultat>\n");
+		        writer.write("  </funcio>\n");
+		    }
+		    writer.write("</resultats>");
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+	}*/
 	
 	
 	
