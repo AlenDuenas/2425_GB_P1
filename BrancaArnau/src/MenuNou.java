@@ -1,11 +1,15 @@
+
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
 public class MenuNou {
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,7 +18,12 @@ public class MenuNou {
 		
 		String [] lectura = OpcionsCamp0 (teclat);	//Opcions de l'arxiu d'entrada
 		
-		funcions (lectura);
+		String resultats[] = funcions (lectura);
+		
+		
+		
+		
+		
 		
 		/*for (int i=0;i<opcions.length;i++)
 		{
@@ -52,27 +61,33 @@ public class MenuNou {
 
 
 	
-	public static void funcions (String [] lectura) {
-		int opcio=0;
+	public static String[] funcions (String [] lectura) {
+		int cont=0;
         String separo[];
         boolean compleix = true;
         boolean errors = false;
         
-    	
+        String primeraLinia=primeraLinia();
+	    String sepPrimera[] = primeraLinia.split("#");
+	    int registres = Integer.parseInt(sepPrimera[2]);
+		  
+	    
+	    int mida  = registres*lectura.length;
+        
+    	 String  resultat[]=new String [mida];	//Creo dos arrays per poder guardar el nom i el resultat generat en la funcio que cridi
+		 String nom[]=new String [mida];	
       
           	
         
 		  try {   
 		
-		   
-			  String primeraLinia=primeraLinia();
-			  
-			  String sepPrimera[] =primeraLinia.split("#");
-			  
+			
 			  
 			 // liniaI ();
-		      
-				for (int i=0; i < lectura.length; i++)
+			  
+			  
+			  
+				for (int i=0; i < lectura.length;i++)
 				{
 					//Separem la linia sensera per el seu separador #
 					separo = lectura[i].split("#");
@@ -127,12 +142,11 @@ public class MenuNou {
 					
 					
 					
-					  
+		 
 				if (compleix)
 				{
 					
-					 String  resultat[]=new String [lectura.length];	//Creo dos arrays per poder guardar el nom i el resultat generat en la funcio que cridi
-				     String nom[]=new String [lectura.length];	
+					
 					switch (Integer.parseInt(separo[0])) {
 					case 1:	
 				 	    System.out.println("Ha triat la funcio 1 ");
@@ -177,23 +191,29 @@ public class MenuNou {
 			 	        int valor2 = Integer.parseInt(coma[1]);
 			 	        int valor3 = Integer.parseInt(coma[2]);
 
+			 	        //for(int j=0; j<registres;j++) {
+			 	        	
+			 	        
 			 	        if (valor1 <= 15 && valor1 > 0 && valor2 > 0 && valor2 < 999 && valor3 > 0 && valor3 <= 1000) {
 			 	           
-
-			 	            opcions = opcions(valor1, valor2, valor3);
-			 	            resultatDouble = numInt(opcions[0], opcions[1], opcions[2]);
-
-			 	            resultat[i] = resultatDouble + "";	//Guardo el resultat a la mateixa posicio del bucle 
-			 	            nom[i] = separo[1];
-			 	           
-
-			 	            System.out.println("El número es " + resultatDouble + "\n");
+			 	        	for (int reg =0;reg<registres;reg++) {
+				 	            opcions = opcions(valor1, valor2, valor3);
+				 	            resultatDouble = numInt(opcions[0], opcions[1], opcions[2]);
+	
+				 	            resultat[reg+(i*registres)] = resultatDouble + " ";	//Guardo el resultat a la mateixa posicio del bucle 
+				 	            nom[reg+(i*registres)] = separo[1];
+				 	           cont++;
+				 	       
+				 	          
+				 	            System.out.println("El número es " + resultatDouble + "Registre: " + reg+ i + registres + "\n");
+			 	        	}
 			 	        } 
+			 	        
 			 	        else 
 			 	        {
 			 	            errors = true;
 			 	        }	//System.out.println("Holaxx");
-			 	    	 
+			 	     // } 
 			 	    	
 
 			 	    break;
@@ -217,7 +237,7 @@ public class MenuNou {
 			 	    	 int opContr4=Integer.parseInt(opcionsContrasenya[3]);
 			 	    	 int longitut=Integer.parseInt(opcionsContrasenya[4]);
 			 	    	 
-			 	    	 
+			 	    	 //for (int z=0; z<registres; z++)
 			 	    	 //System.out.println(opcionsContrasenya[0]+opcionsContrasenya[1]+opcionsContrasenya[2]+opcionsContrasenya[3]+opcionsContrasenya[4]);
 			 	    	if (opContr1==1 || opContr1==2 && opContr2==1 || opContr2==2 && opContr3==1 || opContr3==2 && opContr4==1 || opContr4==2 && longitut>3 )
 			 	    	 {
@@ -230,7 +250,7 @@ public class MenuNou {
 			 	    		String contrasenyaMajuscules;
 			 	    		String contrasenyaSimbols;
 			 	    		
-			 	    		 
+			 	    		for (int reg=0;reg<registres;reg++) { 
 			 	    		//Imprimim el menu de benvinguda 
 			 	    		menu();
 			 	    		
@@ -298,12 +318,12 @@ public class MenuNou {
 			 	    		
 			 	    		 //Aqui Passem a la funcio tot tipus de contrasenya generada encara que hagi triat l'opcio o no i la longitut
 			 	    		  String contrasenyaFinal = generarContrasenya(contrasenyaLletres, contrasenyaNumeros, contrasenyaMajuscules, contrasenyaSimbols, opcioLongitut);
-			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal+"\n");
+			 	    	      System.out.println("Contraseña generada: " + contrasenyaFinal +  reg+ i + registres +"\n");
 			 	    	      
-			 	    	     resultat[i]=  contrasenyaFinal+"";//Guardo el resultat a la mateixa posicio del bucle 
-				 			 nom [i]= separo[1];
-				 			 
-				 			 
+			 	    	     resultat[reg+(i*registres)]=  contrasenyaFinal+"";//Guardo el resultat a la mateixa posicio del bucle 
+				 			 nom [reg+(i*registres)]= separo[1];
+				 			 cont++;
+			 	    		} 
 				 			//System.out.println(resultat[k]);
 							//System.out.println(nom[k]);
 			 	    	 }
@@ -328,16 +348,17 @@ public class MenuNou {
 			 			int [] resData;
 			 			int data;
 			 			//Zona de codi 
+			 			for (int reg=0;reg<registres;reg++) {
 			 			resData=valorsInicials(datesMin, datesMax);
 			 			
 			 			data=numAleatori(resData);
 			 			  
-			 			System.out.println(data+"\n");
+			 			System.out.println(data +  reg+ i + lectura.length +"\n");
 			 			
-			 			 resultat[i]=  data+"";//Guardo el resultat a la mateixa posicio del bucle 
-			 			 nom[i] = separo[1]; 
-			 	    	
-			 	    	 
+			 			 resultat[reg+(i*registres)]=  data+"";//Guardo el resultat a la mateixa posicio del bucle 
+			 			 nom[reg+(i*registres)] = separo[1]; 
+			 			 cont++;
+			 			}
 			 	    	//System.out.println(resultat[k]);
 						//System.out.println(nom[k]);
 			 	    	 
@@ -357,12 +378,12 @@ public class MenuNou {
 			 	    	break;
 
 					}
-					if (resultat[i]!=null && nom[i]!=null)
-				    System.out.println("Nom: " + nom[i] + ", Resultat: " + resultat[i]);
-					//FUNCIO PER ESCRIURE XML
 					
-			
+						if (resultat[i]!=null && nom[i]!=null)
+					    System.out.println("Nom: " + nom[i] + ", Resultat: " + resultat[i]);
 						
+						
+			
 					
 				} 
 				if(!compleix) 
@@ -370,19 +391,89 @@ public class MenuNou {
 					  errors =true;
 				}
 				
+				//if (resultat[i]!=null && nom[i]!=null)
+					//arxiuXML(resultat, nom);
+				
+				
 			}
+				//comprovacio dades generades
+				for (int i=0;i<resultat.length;i++)
+				{
+					System.out.println(i + " -> " + nom[i] + ": " + resultat[i]);
+				}
+				//if (resultat[i]!=null && nom[i]!=null)
+				arxiuXML(resultat, nom, registres, lectura.length);
+				
+				
 			if(errors) 
 			{
 				  System.out.println("L'arxiu d'entrada te ERRORS");
 			}
 		
-			
+			return resultat;
 			
 		}catch (Exception pasanCosas) {
 			pasanCosas.printStackTrace();
 		}
 		
-
+		  return null;
+	}
+	
+	private static void arxiuXML(String[] resultat, String[] nom, int registres, int lenght) {
+		String xml = "";
+		String elements="";
+		try {
+			File desti = new File("C:\\Users\\arnau\\Documents\\resultat.xml");
+			PrintWriter impressora= new PrintWriter(desti);
+			
+			
+			
+			String primeraLinia= "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+			
+			String elementRoot="<registres>\n";
+		
+			for (int i=0;i<registres;i++) {
+				for (int j=0;j<lenght;j++) {
+					
+				/*	System.out.println(" <" + nom[i+(j*registres)] + ">\n"
+							+ "    <"+nom[i+(j*registres)]+">" + resultat[i+(j*registres)] + "</"+nom[i+(j*registres)]+">\n" // iria una variable que coge nombres o apellidos
+							+ " </" + nom[i+(j*registres)] + ">\n");*/
+					
+					
+					elements += " <" + nom[i+(j*registres)] + ">\n"
+							+ "    <"+nom[i+(j*registres)]+">" + resultat[i+(j*registres)] + "</"+nom[i+(j*registres)]+">\n" // iria una variable que coge nombres o apellidos
+							+ " </" + nom[i+(j*registres)] + ">\n";
+			
+				}
+			}
+			
+			String tancament = "</registres>\n";
+			
+			impressora.println(primeraLinia);
+			impressora.println(elementRoot);
+			impressora.println(elements);
+			impressora.println(tancament);
+			
+			
+			
+		/*for(int i=0;i<resultat.length;i++) {
+			xml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+					+ "<mockaroo>\n"
+					+ "  <" + nom[i] + ">\n"
+					+ "    <name>" + resultat[i] + "</name>\n" // iria una variable que coge nombres o apellidos
+					+ "  </" + nom[i] + ">\n"
+					+ "</mockaroo>\n";
+			
+			impressora.println(xml);
+			
+			System.out.println(resultat[i]+""+nom[i]);
+		}*/
+		
+		impressora.flush();		//Per finalitzar
+		impressora.close(); 
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static  boolean esNumero (String  numero) {
@@ -403,7 +494,6 @@ public class MenuNou {
 } 
 	
 
-	
 	public static void liniaI (String [] linia) {
 	
 		
@@ -439,29 +529,6 @@ public class MenuNou {
 		 */
 
 }		
-	
-	
-	/*public static void escrituraXML (String [] nom, String [] resultat) {
-		try (FileWriter writer = new FileWriter("resultats.xml")) {
-		    writer.write("<resultats>\n");
-		    for (int i = 0; i < resultat.size(); i++) {
-		        writer.write("  <funcio>\n");
-		        writer.write("    <nom>" + nom.get(i) + "</nom>\n");
-		        writer.write("    <resultat>" + resultat.get(i) + "</resultat>\n");
-		        writer.write("  </funcio>\n");
-		    }
-		    writer.write("</resultats>");
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-	}*/
-	
-	
-	
-	
-	
-	
-
 	
 	public static String  primeraLinia () {
 		 String linea="";
@@ -568,7 +635,6 @@ public class MenuNou {
 		
 	}
 	
-	
 	public static boolean comprovacioPrimeraLinia (String primeraLinia) {
 		String [] separo = primeraLinia.split("#");
 		boolean compleix = true;
@@ -618,12 +684,7 @@ public class MenuNou {
 		}
 		return compleix;
 		
-	}*/
-	
-	
-	
-	
-	
+	}*/	
 	
 	/*public static String [] arxiuSeleccio () {
 		
@@ -677,11 +738,10 @@ public class MenuNou {
 		
 		return opcio;
 	}
-	
-	
+
 	
 	public static Double numInt (int minim, int maxim, int decimals) {
-		Random bombo=new Random(maxim);
+		Random bombo=new Random();
 		
 		
 		// Generar un número aleatori amb decimals dins del rang
@@ -697,293 +757,292 @@ public class MenuNou {
 	}
 	
 	//Menu
-		public static void menu () {
-			//System.out.println("Entri siusplau els següents parametres per poder generar-li la contrasenya ------->");
-		}
-		 
-		//Aqui demanem si vol minuscules, numeros, majuscules, simbols etc...
-		public static int[] opcions(int valor1, int valor2, int valor3, int valor4, int longitut) {
-			boolean condicio= true;
-			int opcions [] = new int [5];
+	public static void menu () {
+		//System.out.println("Entri siusplau els següents parametres per poder generar-li la contrasenya ------->");
+	}
+	 
+	//Aqui demanem si vol minuscules, numeros, majuscules, simbols etc...
+	public static int[] opcions(int valor1, int valor2, int valor3, int valor4, int longitut) {
+		boolean condicio= true;
+		int opcions [] = new int [5];
 
+		
+		while (condicio)
+		{
+			//System.out.println("Entri si vol lletres  1. SI / 2 NO:");
+			int opcioLletres = valor1;
 			
-			while (condicio)
+			if (opcioLletres < 1 || opcioLletres > 2)
 			{
-				//System.out.println("Entri si vol lletres  1. SI / 2 NO:");
-				int opcioLletres = valor1;
-				
-				if (opcioLletres < 1 || opcioLletres > 2)
-				{
-					System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL LLETRES O NO");
-				}
-				
-				else 
-				{
-					opcions[0]=opcioLletres;
-					condicio=false;
-				}
+				System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL LLETRES O NO");
 			}
 			
-			condicio = true;
-			
-			
-			
-			while (condicio)
+			else 
 			{
-				//System.out.println("Entri si vol numeros  1. SI / 2 NO:");
-				int opcioNumeros = valor2;
-				
-				if (opcioNumeros < 1 || opcioNumeros > 2)
-				{
-					System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL NUMEROS O NO");
-				}
-				
-				else 
-				{
-					opcions[1]=opcioNumeros;
-					condicio=false;
-				}
+				opcions[0]=opcioLletres;
+				condicio=false;
 			}
-			condicio = true;
+		}
+		
+		condicio = true;
+		
+		
+		
+		while (condicio)
+		{
+			//System.out.println("Entri si vol numeros  1. SI / 2 NO:");
+			int opcioNumeros = valor2;
 			
-			
-			
-			while (condicio)
+			if (opcioNumeros < 1 || opcioNumeros > 2)
 			{
-				//System.out.println("Entri si vol majuscules  1. SI / 2 NO:");
-				int opcioMajuscules = valor3;
-				
-				if (opcioMajuscules < 1 || opcioMajuscules > 2)
-				{
-					System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL MAJUSCULES O NO");
-				}
-				
-				else 
-				{
-					opcions[2]=opcioMajuscules;
-					condicio=false;
-				}
+				System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL NUMEROS O NO");
 			}
-			condicio = true;
 			
-			
-			
-			while (condicio)
+			else 
 			{
-				//System.out.println("Entri si vol simbols  1. SI / 2 NO:");
-				int opcioSimbols = valor4;
-				
-				if (opcioSimbols < 1 || opcioSimbols > 2)
-				{
-					System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL SIMBOLS O NO");
-				}
-				
-				else 
-				{
-					opcions[3]=opcioSimbols;
-					condicio=false;
-				}
+				opcions[1]=opcioNumeros;
+				condicio=false;
 			}
-			condicio = true;
+		}
+		condicio = true;
+		
+		
+		
+		while (condicio)
+		{
+			//System.out.println("Entri si vol majuscules  1. SI / 2 NO:");
+			int opcioMajuscules = valor3;
 			
-			
-			while (condicio)
+			if (opcioMajuscules < 1 || opcioMajuscules > 2)
 			{
-				//System.out.println("Entri la longitut de la contrasenya");
-				int opcioLongitut = longitut;
-				
-				if (opcioLongitut < 3)
-				{
-					System.out.println("CONTRASENYA MOLT POC SEGURA POSI UNA LONGITUT MES GRAN DE 4");
-				}
-				
-				else 
-				{
-					opcions[4]=opcioLongitut;
-					condicio=false;
-				}
+				System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL MAJUSCULES O NO");
 			}
-				
 			
-			return opcions;
+			else 
+			{
+				opcions[2]=opcioMajuscules;
+				condicio=false;
+			}
 		}
+		condicio = true;
 		
-		//Generador de contrasenya nomes Lletres
-		public static String lletres (int longitut) {
+		
+		
+		while (condicio)
+		{
+			//System.out.println("Entri si vol simbols  1. SI / 2 NO:");
+			int opcioSimbols = valor4;
 			
-			//Creem un String amb totes les lletres del abecedari 
-			 String caracters = "abcdefghijklmnopqrstuvwxyz";
-		     Random random = new Random(); //Instanciem un Random 
-		     String contrasenya = "";	//Aqui guardarem la contrasenya generada
-
-		     
-		     //Fem un bucle de la longitut de que ens ha passat l'usuari 
-		        for (int i = 0; i < longitut; i++) 
-		        {
-		            int indexAleatori = random.nextInt(caracters.length());	//Crrem el random a partir de la longitut de l'String de caracters per seleccionar la posicio aleatoria
-		            contrasenya += caracters.charAt(indexAleatori);	// Acumulem cada lletra a el nou String 
-		        }
-
-		        return contrasenya;
-			    
+			if (opcioSimbols < 1 || opcioSimbols > 2)
+			{
+				System.out.println("OPCIO NO VALIDA TORNI A ENTRAR SI VOL SIMBOLS O NO");
+			}
 			
+			else 
+			{
+				opcions[3]=opcioSimbols;
+				condicio=false;
+			}
+		}
+		condicio = true;
+		
+		
+		while (condicio)
+		{
+			//System.out.println("Entri la longitut de la contrasenya");
+			int opcioLongitut = longitut;
 			
+			if (opcioLongitut < 3)
+			{
+				System.out.println("CONTRASENYA MOLT POC SEGURA POSI UNA LONGITUT MES GRAN DE 4");
+			}
+			
+			else 
+			{
+				opcions[4]=opcioLongitut;
+				condicio=false;
+			}
 		}
+			
 		
-		public static String numeros (int longitut) {
-			 String numeros = "123456789";	//Creem un String amb tots els numeros del 1 - 9
-		     Random random = new Random();	//Instanciem el aleatori
-		     String contrasenyaNumeros = "";	//Guardarem la contrasenya generada per numeros aqui a aquest String 
-		     
-		   //Fem un bucle de la longitut de que ens ha passat l'usuari 
-		        for (int i = 0; i < longitut; i++) 
-		        {
-		        	//Guardem el numero aleatori a partir de la longitut passada
-		            int indexAleatori = random.nextInt(numeros.length());
-		            //Guardem a contrasenyaNumeros els numeros generats aleatoriament
-		            contrasenyaNumeros += numeros.charAt(indexAleatori);	
-		        }
-
-		        return contrasenyaNumeros;
-		}
+		return opcions;
+	}
+	
+	//Generador de contrasenya nomes Lletres
+	public static String lletres (int longitut) {
 		
-		public static String majuscules (int longitut) {
-			 String majuscules = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";		//Creem un String amb totes les lletres del abecedari amb majuscules
-		     Random random = new Random();	//Instanciem un Random
-		     String contrasenyaMajuscules = "";	//Guardarem la contrasenya generada aqui
+		//Creem un String amb totes les lletres del abecedari 
+		 String caracters = "abcdefghijklmnopqrstuvwxyz";
+	     Random random = new Random(); //Instanciem un Random 
+	     String contrasenya = "";	//Aqui guardarem la contrasenya generada
 
-		     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
-		        for (int i = 0; i < longitut; i++) 
-		        {
-		        	//Generem el numero aleatori a partir de la longitut de l'String majuscules
-		            int indexAleatori = random.nextInt(majuscules.length());	
-		            //Generem a contrasenya 
-		            contrasenyaMajuscules += majuscules.charAt(indexAleatori);
-		        }
-
-		        return contrasenyaMajuscules;
-		}
-		
-		public static String simbols (int longitut) {
-			 String simbols = "!ºª&()#*+-¿?=¬~¨[ ]";	//Creem un String amb varis signes que Java accepti 
-		     Random random = new Random();	//Instanciem un Random
-		     String contrasenyaSimbols = "";	//Creem un nou String per guardar la contrasenya generada
-
-		     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
-		        for (int i = 0; i < longitut; i++) 
-		        {
-		        	//Generem el numero aleatori a partir de la longitut de l'String simbols
-		            int indexAleatori = random.nextInt(simbols.length());
-		            contrasenyaSimbols += simbols.charAt(indexAleatori);	//ho guardem  a el nou String 
-		        }
-
-		        return contrasenyaSimbols;
-		}
-		
-	    public static String generarContrasenya(String contrasenyaLletres, String contrasenyaNumeros, String contrasenyaMajuscules, String contrasenyaSimbols, int longitud) {
-	        // Concatem tots els possibles caràcters en un sol String
-	        String possiblesCaracteres = contrasenyaLletres + contrasenyaNumeros + contrasenyaMajuscules + contrasenyaSimbols;
-
-	        // Verifiquem que no estigui buit el conjunt de caràcters possibles
-	        if (possiblesCaracteres.isEmpty()) 
+	     
+	     //Fem un bucle de la longitut de que ens ha passat l'usuari 
+	        for (int i = 0; i < longitut; i++) 
 	        {
-	            throw new IllegalArgumentException("No s'han proporcionat caràcters per generar la contrasenya.");
-	        }
-	        
-	        // Creem un String per emmagatzemar la contrasenya generada
-	        String contrasenyaGenerada = "";
-
-	        // Creem el generador aleatori
-	        Random random = new Random();
-
-	        // Generem la contrasenya seleccionant els caràcters aleatoris 
-	        for (int i = 0; i < longitud; i++) 
-	        {
-	            // Triem un caràcter aleatori del String 'possiblesCaracteres'
-	            int indexAleatori = random.nextInt(possiblesCaracteres.length());
-	            char caracterAleatori = possiblesCaracteres.charAt(indexAleatori);
-	            contrasenyaGenerada += caracterAleatori;  // Afegim el caràcter a la contrasenya
+	            int indexAleatori = random.nextInt(caracters.length());	//Crrem el random a partir de la longitut de l'String de caracters per seleccionar la posicio aleatoria
+	            contrasenya += caracters.charAt(indexAleatori);	// Acumulem cada lletra a el nou String 
 	        }
 
-	        return contrasenyaGenerada;
-	    }
-	    
-	    
-	    
-	    public static int[] valorsInicials(int dataMin, int dataMax) {
-	 		int resultat[]=new int[2];
-			int min;
-			int max;
-			boolean condicio=true;
-			
-			
-			while (condicio)
-			{
-			   // System.out.println("Indica siusplau una data minima i maxima per generar --> ");
-			   // System.out.println("Els valors per defecte son: MINIM: 1900 I MAXIM 2023");
-			   // System.out.println("Entri siusplau una data minima, si no vol entrar-ne cap entri un 0");
-			    min = dataMin;
+	        return contrasenya;
+		    
+		
+		
+	}
+	
+	public static String numeros (int longitut) {
+		 String numeros = "123456789";	//Creem un String amb tots els numeros del 1 - 9
+	     Random random = new Random();	//Instanciem el aleatori
+	     String contrasenyaNumeros = "";	//Guardarem la contrasenya generada per numeros aqui a aquest String 
+	     
+	   //Fem un bucle de la longitut de que ens ha passat l'usuari 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Guardem el numero aleatori a partir de la longitut passada
+	            int indexAleatori = random.nextInt(numeros.length());
+	            //Guardem a contrasenyaNumeros els numeros generats aleatoriament
+	            contrasenyaNumeros += numeros.charAt(indexAleatori);	
+	        }
 
-			   // System.out.println("Entri siusplau una data maxima, si no vol entrar-ne cap entri un 1");
-			    max = dataMax;
+	        return contrasenyaNumeros;
+	}
+	
+	public static String majuscules (int longitut) {
+		 String majuscules = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";		//Creem un String amb totes les lletres del abecedari amb majuscules
+	     Random random = new Random();	//Instanciem un Random
+	     String contrasenyaMajuscules = "";	//Guardarem la contrasenya generada aqui
 
-			    // Validar i assignar valor per defecte si s'introdueixen 0 o 1
-			    if (min == 0) 
-				    {
-				        resultat[0] = 1900; // Valor per defecte
-				    } 
-				    
-			    
-			    else if (min >= 1900 && min <= 2023) 
-				    {
-				        resultat[0] = min;  // Valor validat
-				    } 
-			    
-			    
-			    	else 
-				    {
-				        System.out.println("La data minima no és vàlida, ha de ser entre 1900 i 2023.");
-				        continue; // Torna a demanar les dates
-				    }
+	     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Generem el numero aleatori a partir de la longitut de l'String majuscules
+	            int indexAleatori = random.nextInt(majuscules.length());	
+	            //Generem a contrasenya 
+	            contrasenyaMajuscules += majuscules.charAt(indexAleatori);
+	        }
 
-			    if (max == 1) 
-			    
-				    {
-				        resultat[1] = 2023; // Valor per defecte
-				    } 
-				    
-			    
-			    else if (max >= 1900 && max <= 2023 && max >= resultat[0])
-			    
-				    {
-				        resultat[1] = max;  // Valor validat
-				    } 
-				    
-			    
-			    else 
-			    
-				    {
-				        System.out.println("La data màxima no és vàlida, ha de ser entre 1900 i 2023 i no pot ser inferior a la data mínima.");
-				        continue; // Torna a demanar les dates
-				    }
+	        return contrasenyaMajuscules;
+	}
+	
+	public static String simbols (int longitut) {
+		 String simbols = "!ºª&()#*+-¿?=¬~¨[ ]";	//Creem un String amb varis signes que Java accepti 
+	     Random random = new Random();	//Instanciem un Random
+	     String contrasenyaSimbols = "";	//Creem un nou String per guardar la contrasenya generada
 
-			    // Si s'arriba aquí, les dates són vàlides i es surt del bucle
-			    	condicio = false;
-			}
-			
-			
-			
-			
-			
-			System.out.println("Els valors son: ANY MINIM "+resultat[0]+" i ANY MAXIM "+resultat[1]);
-			
-			
-			return resultat;
+	     //Creem un bucle per poder generar la contrasenya a partir de la longitut que ens han passat 
+	        for (int i = 0; i < longitut; i++) 
+	        {
+	        	//Generem el numero aleatori a partir de la longitut de l'String simbols
+	            int indexAleatori = random.nextInt(simbols.length());
+	            contrasenyaSimbols += simbols.charAt(indexAleatori);	//ho guardem  a el nou String 
+	        }
+
+	        return contrasenyaSimbols;
+	}
+	
+    public static String generarContrasenya(String contrasenyaLletres, String contrasenyaNumeros, String contrasenyaMajuscules, String contrasenyaSimbols, int longitud) {
+        // Concatem tots els possibles caràcters en un sol String
+        String possiblesCaracteres = contrasenyaLletres + contrasenyaNumeros + contrasenyaMajuscules + contrasenyaSimbols;
+
+        // Verifiquem que no estigui buit el conjunt de caràcters possibles
+        if (possiblesCaracteres.isEmpty()) 
+        {
+            throw new IllegalArgumentException("No s'han proporcionat caràcters per generar la contrasenya.");
+        }
+        
+        // Creem un String per emmagatzemar la contrasenya generada
+        String contrasenyaGenerada = "";
+
+        // Creem el generador aleatori
+        Random random = new Random();
+
+        // Generem la contrasenya seleccionant els caràcters aleatoris 
+        for (int i = 0; i < longitud; i++) 
+        {
+            // Triem un caràcter aleatori del String 'possiblesCaracteres'
+            int indexAleatori = random.nextInt(possiblesCaracteres.length());
+            char caracterAleatori = possiblesCaracteres.charAt(indexAleatori);
+            contrasenyaGenerada += caracterAleatori;  // Afegim el caràcter a la contrasenya
+        }
+
+        return contrasenyaGenerada;
+    }
+
+    
+    public static int[] valorsInicials(int dataMin, int dataMax) {
+ 		int resultat[]=new int[2];
+		int min;
+		int max;
+		boolean condicio=true;
+		
+		
+		while (condicio)
+		{
+		   // System.out.println("Indica siusplau una data minima i maxima per generar --> ");
+		   // System.out.println("Els valors per defecte son: MINIM: 1900 I MAXIM 2023");
+		   // System.out.println("Entri siusplau una data minima, si no vol entrar-ne cap entri un 0");
+		    min = dataMin;
+
+		   // System.out.println("Entri siusplau una data maxima, si no vol entrar-ne cap entri un 1");
+		    max = dataMax;
+
+		    // Validar i assignar valor per defecte si s'introdueixen 0 o 1
+		    if (min == 0) 
+			    {
+			        resultat[0] = 1900; // Valor per defecte
+			    } 
+			    
+		    
+		    else if (min >= 1900 && min <= 2023) 
+			    {
+			        resultat[0] = min;  // Valor validat
+			    } 
+		    
+		    
+		    	else 
+			    {
+			        System.out.println("La data minima no és vàlida, ha de ser entre 1900 i 2023.");
+			        continue; // Torna a demanar les dates
+			    }
+
+		    if (max == 1) 
+		    
+			    {
+			        resultat[1] = 2023; // Valor per defecte
+			    } 
+			    
+		    
+		    else if (max >= 1900 && max <= 2023 && max >= resultat[0])
+		    
+			    {
+			        resultat[1] = max;  // Valor validat
+			    } 
+			    
+		    
+		    else 
+		    
+			    {
+			        System.out.println("La data màxima no és vàlida, ha de ser entre 1900 i 2023 i no pot ser inferior a la data mínima.");
+			        continue; // Torna a demanar les dates
+			    }
+
+		    // Si s'arriba aquí, les dates són vàlides i es surt del bucle
+		    	condicio = false;
 		}
 		
+		
+		
+		
+		
+	//	System.out.println("Els valors son: ANY MINIM "+resultat[0]+" i ANY MAXIM "+resultat[1]);
+		
+		
+		return resultat;
+	}
+	
 
-		public static int numAleatori(int[] valors) {
-			Random bombo=new Random(valors[1]);
+	public static int numAleatori(int[] valors) {
+			Random bombo=new Random();
 			int num=0;
 			boolean condicio=true;
 			
