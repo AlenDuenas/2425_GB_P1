@@ -420,61 +420,43 @@ public class MenuNou {
 	}
 	
 	private static void arxiuXML(String[] resultat, String[] nom, int registres, int lenght) {
-		String xml = "";
-		String elements="";
-		try {
-			File desti = new File("C:\\Users\\arnau\\Documents\\resultat.xml");
-			PrintWriter impressora= new PrintWriter(desti);
-			
-			
-			
-			String primeraLinia= "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-			
-			String elementRoot="<registres>\n";
-		
-			for (int i=0;i<registres;i++) {
-				for (int j=0;j<lenght;j++) {
-					
-				/*	System.out.println(" <" + nom[i+(j*registres)] + ">\n"
-							+ "    <"+nom[i+(j*registres)]+">" + resultat[i+(j*registres)] + "</"+nom[i+(j*registres)]+">\n" // iria una variable que coge nombres o apellidos
-							+ " </" + nom[i+(j*registres)] + ">\n");*/
-					
-					
-					elements += " <" + nom[i+(j*registres)] + ">\n"
-							+ "    <"+nom[i+(j*registres)]+">" + resultat[i+(j*registres)] + "</"+nom[i+(j*registres)]+">\n" // iria una variable que coge nombres o apellidos
-							+ " </" + nom[i+(j*registres)] + ">\n";
-			
-				}
-			}
-			
-			String tancament = "</registres>\n";
-			
-			impressora.println(primeraLinia);
-			impressora.println(elementRoot);
-			impressora.println(elements);
-			impressora.println(tancament);
-			
-			
-			
-		/*for(int i=0;i<resultat.length;i++) {
-			xml += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-					+ "<mockaroo>\n"
-					+ "  <" + nom[i] + ">\n"
-					+ "    <name>" + resultat[i] + "</name>\n" // iria una variable que coge nombres o apellidos
-					+ "  </" + nom[i] + ">\n"
-					+ "</mockaroo>\n";
-			
-			impressora.println(xml);
-			
-			System.out.println(resultat[i]+""+nom[i]);
-		}*/
-		
-		impressora.flush();		//Per finalitzar
-		impressora.close(); 
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
+	    try {
+	        // Archivo de destino
+	        File desti = new File("C:\\Users\\arnau\\Documents\\resultat.xml");
+	        PrintWriter impressora = new PrintWriter(desti);
+
+	        // Encabezado XML
+	        String primeraLinia = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+	        impressora.println(primeraLinia);
+
+	        // Nodo raíz
+	        String elementRoot = "<registres>";
+	        impressora.println(elementRoot);
+
+	        // Generar los registros
+	        for (int i = 0; i < registres; i++) {
+	            impressora.println("  <element>");
+	            for (int j = 0; j < lenght; j++) {
+	                String etiqueta = nom[i + (j * registres)];
+	                String valor = resultat[i + (j * registres)];
+	                impressora.println("    <" + etiqueta + ">" + valor + "</" + etiqueta + ">");
+	            }
+	            impressora.println("  </element>");
+	        }
+
+	        // Cerrar el nodo raíz
+	        String tancament = "</registres>";
+	        impressora.println(tancament);
+
+	        // Finalizar la escritura
+	        impressora.flush();
+	        impressora.close();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
+
 	
 	public static  boolean esNumero (String  numero) {
 		
