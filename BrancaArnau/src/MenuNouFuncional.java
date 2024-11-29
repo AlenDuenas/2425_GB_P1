@@ -453,6 +453,19 @@ public class MenuNouFuncional {
                             break;
                         case 19:
                             System.out.println("Ha triat la funcio 19 ");
+                            int autonumeric = Integer.parseInt(separo[2]);                            
+    
+                            
+                            for (int reg =0;reg<registres;reg++) {
+                                resultat[reg+(i*registres)] =autonumeric+"";
+                                nom[reg+(i*registres)] = separo[1];
+                                cont++;
+                                autonumeric++;
+                            }
+                            
+                            
+                            
+                            
                             break;
                         default:
                             System.out.println("opcio no valida");
@@ -1871,6 +1884,14 @@ public class MenuNouFuncional {
     }
     
     
+   
+    	
+    	
+    
+    	
+    	
+    	
+    	
     
     
     
