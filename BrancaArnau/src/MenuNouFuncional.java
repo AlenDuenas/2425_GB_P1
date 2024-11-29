@@ -1886,12 +1886,12 @@ public class MenuNouFuncional {
 
         // Variables para la empresa y la extensión
         String Empresa = "Noms de companyia"; // Valor por defecto
-        String Extension = ".com";           // Valor por defecto
+        //String Extension = ".com";           // Valor por defecto
 
         // Escáner para leer la entrada del usuario
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("¿Desea personalizar el nombre de la empresa? (sí/no): ");
+      //  System.out.println("¿Desea personalizar el nombre de la empresa? (sí/no): ");
         String respuestaEmpresa = opcio1+"";
 
         if (respuestaEmpresa.equalsIgnoreCase("sí")) {
@@ -1899,32 +1899,33 @@ public class MenuNouFuncional {
             Empresa = scanner.nextLine();
         }
 
-        System.out.println("¿Desea personalizar la extensión del dominio? (sí/no): ");
+       // System.out.println("¿Desea personalizar la extensión del dominio? (sí/no): ");
         String respuestaExtension = opcio2+"";
 
-        if (respuestaExtension.equalsIgnoreCase("sí")) {
+        /*if (respuestaExtension.equalsIgnoreCase("sí")) {
             System.out.println("Ingrese la extensión del dominio (por ejemplo, '.net', '.org', etc.): ");
             Extension = scanner.nextLine();
-        }
+        }*/
 
         // Random para seleccionar nombres y apellidos
         Random random = new Random();
 
         // Generar y mostrar correos electrónicos
         System.out.println("\nCorreos generados:");
-        for (int i = 0; i < 10; i++) { // Generar 10 correos aleatorios
-            String nombre = nombres[random.nextInt(nombres.length)];
-            String apellido = apellidos[random.nextInt(apellidos.length)];
-            String dominio = correos[random.nextInt(correos.length)];
+        
+        String nombre = nombres[random.nextInt(nombres.length)];
+        String apellido = apellidos[random.nextInt(apellidos.length)];
+        String dominio = correos[random.nextInt(correos.length)];
 
-            // Formar la dirección de correo
-            String email = (nombre.toLowerCase() + "." + apellido.toLowerCase() + dominio + Extension)
-                    .replace(" ", ""); // Eliminar espacios en blanco
-            return email;
-        }
-
+        // Formar la dirección de correo
+        String email = (nombre.toLowerCase() + "." + apellido.toLowerCase() + dominio)
+                .replace(" ", ""); // Eliminar espacios en blanco
         scanner.close();
-        return null;
+        return email;
+    
+
+        
+
     }
 }
 
